@@ -5,13 +5,12 @@ import Image from "next/image";
 import { ChevronDown, Search, Youtube, Mail } from "lucide-react";
 
 const navItems = [
-  { label: "НҮҮР ХУУДАС", href: "#", hasDropdown: false },
-  { label: "БИДНИЙ ТУХАЙ", href: "#", hasDropdown: true },
-  { label: "МЭДЭЭ, МЭДЭЭЛЭЛ", href: "#", hasDropdown: false },
-  { label: "ҮЙЛЧИЛГЭЭ", href: "#", hasDropdown: true },
-  { label: "ХҮНИЙ НӨӨЦ", href: "#", hasDropdown: true },
-  { label: "ГОМДОЛ САНАЛ", href: "#", hasDropdown: false },
-  { label: "ХОЛБОО БАРИХ", href: "#", hasDropdown: false },
+  { label: "НҮҮР ХУУДАС", href: "#" },
+  { label: "БИДНИЙ ТУХАЙ", href: "#" },
+  { label: "МЭДЭЭ, МЭДЭЭЛЭЛ", href: "#" },
+  { label: "ҮЙЛЧИЛГЭЭ", href: "#" },
+  { label: "ГОМДОЛ САНАЛ", href: "#" },
+  { label: "ХОЛБОО БАРИХ", href: "#" },
 ];
 
 const slides = [
@@ -37,59 +36,14 @@ export default function CICHomePage() {
       {/* Header */}
       <header className="bg-background border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
-          <div className="flex h-16 items-center justify-between lg:h-20">
+          <div className="flex h-16 items-center gap-8 lg:h-20">
             {/* Logo */}
             <a
               href="#"
               className="flex shrink-0 items-center"
-              aria-label="CIC - Нүүр хуудас"
+              aria-label="LKM - Нүүр хуудас"
             >
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 lg:h-12 lg:w-12"
-                aria-hidden="true"
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="46"
-                  stroke="#1a3fa0"
-                  strokeWidth="6"
-                  fill="none"
-                />
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="30"
-                  stroke="#1a3fa0"
-                  strokeWidth="5"
-                  fill="none"
-                />
-                <circle cx="50" cy="50" r="10" fill="#1a3fa0" />
-                <line
-                  x1="4"
-                  y1="50"
-                  x2="20"
-                  y2="50"
-                  stroke="#1a3fa0"
-                  strokeWidth="5"
-                />
-                <text
-                  x="50"
-                  y="88"
-                  textAnchor="middle"
-                  fill="#1a3fa0"
-                  fontSize="14"
-                  fontWeight="bold"
-                  fontFamily="sans-serif"
-                >
-                  CIC
-                </text>
-              </svg>
+              <Image src="/logo.jpg" alt="LKM Logo" width={80} height={20} />
             </a>
 
             {/* Desktop Navigation */}
@@ -104,48 +58,10 @@ export default function CICHomePage() {
                   className="flex items-center gap-0.5 px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
                 >
                   {item.label}
-                  {item.hasDropdown && <ChevronDown className="h-3.5 w-3.5" />}
+                  {item && <ChevronDown className="h-3.5 w-3.5" />}
                 </a>
               ))}
             </nav>
-
-            {/* Social + Search (Desktop) */}
-            <div className="hidden items-center gap-3 lg:flex">
-              <a
-                href="#"
-                className="text-foreground/70 transition-colors hover:text-primary"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-foreground/70 transition-colors hover:text-primary"
-                aria-label="TikTok"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-5 w-5"
-                  aria-hidden="true"
-                >
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.44a8.16 8.16 0 0 0 3.76.96V6.09a4.84 4.84 0 0 1 0 .6z" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="text-foreground/70 transition-colors hover:text-primary"
-                aria-label="Имэйл"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <button
-                className="ml-1 text-foreground/70 transition-colors hover:text-primary"
-                aria-label="Хайх"
-              >
-                <Search className="h-5 w-5" />
-              </button>
-            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -188,46 +104,11 @@ export default function CICHomePage() {
                     className="flex items-center justify-between px-2 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
                   >
                     {item.label}
-                    {item.hasDropdown && <ChevronDown className="h-4 w-4" />}
+                    {item && <ChevronDown className="h-4 w-4" />}
                   </a>
                 ))}
               </div>
-              <div className="flex items-center gap-4 border-t border-border px-2 pt-4">
-                <a
-                  href="#"
-                  className="text-foreground/70 hover:text-primary"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="text-foreground/70 hover:text-primary"
-                  aria-label="TikTok"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                    aria-hidden="true"
-                  >
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.44a8.16 8.16 0 0 0 3.76.96V6.09a4.84 4.84 0 0 1 0 .6z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-foreground/70 hover:text-primary"
-                  aria-label="Имэйл"
-                >
-                  <Mail className="h-5 w-5" />
-                </a>
-                <button
-                  className="text-foreground/70 hover:text-primary"
-                  aria-label="Хайх"
-                >
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
+              <div className="flex items-center gap-4 border-t border-border px-2 pt-4"></div>
             </nav>
           )}
         </div>
@@ -235,10 +116,10 @@ export default function CICHomePage() {
 
       {/* Hero Carousel */}
       <section
-        className="relative w-full px-20 py-10 overflow-hidden"
+        className="relative w-full px-33  py-10 overflow-hidden"
         aria-label="Зургийн слайд"
       >
-        <div className="relative aspect-[16/7] w-full px-10 sm:aspect-[16/4] lg:aspect-[16/5]">
+        <div className="relative aspect-[16/7] w-50vw px-10 sm:aspect-[16/8] lg:aspect-[16/5]">
           {slides.map((slide, index) => (
             <div
               key={slide.src}
@@ -251,7 +132,7 @@ export default function CICHomePage() {
                 src={slide.src}
                 alt={slide.alt}
                 fill
-                className="object-cover"
+                className="object-cover rounded-2xl"
                 priority={index === 0}
                 sizes="50vw"
               />
