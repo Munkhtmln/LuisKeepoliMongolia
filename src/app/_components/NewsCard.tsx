@@ -1,12 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface NewsCardProps {
   image: string;
   title: string;
   description: string;
+  slug: string;
 }
 
-export function NewsCard({ image, title, description }: NewsCardProps) {
+export function NewsCard({ image, title, description, slug }: NewsCardProps) {
   return (
     <article className="flex flex-col">
       <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -20,9 +22,12 @@ export function NewsCard({ image, title, description }: NewsCardProps) {
           {description}
         </p>
         <div className="flex justify-center">
-          <button className="px-8 py-2.5 border border-foreground text-foreground text-sm font-medium rounded-sm hover:bg-foreground hover:text-background transition-colors cursor-pointer">
-            {"Дэлгэрэнгүй"}
-          </button>
+          <Link
+            href={`/news/${slug}`}
+            className="px-8 py-2.5 border border-foreground text-foreground text-sm font-medium rounded-sm hover:bg-foreground hover:text-background transition-colors cursor-pointer"
+          >
+            Дэлгэрэнгүй
+          </Link>
         </div>
       </div>
     </article>

@@ -2,15 +2,16 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, Search, Youtube, Mail } from "lucide-react";
 
 const navItems = [
-  { label: "НҮҮР ХУУДАС", href: "#" },
-  { label: "БИДНИЙ ТУХАЙ", href: "#" },
-  { label: "МЭДЭЭ, МЭДЭЭЛЭЛ", href: "#" },
-  { label: "ҮЙЛЧИЛГЭЭ", href: "#" },
-  { label: "ГОМДОЛ САНАЛ", href: "#" },
-  { label: "ХОЛБОО БАРИХ", href: "#" },
+  { label: "НҮҮР ХУУДАС", href: "/" },
+  { label: "БИДНИЙ ТУХАЙ", href: "/about" },
+  { label: "МЭДЭЭ, МЭДЭЭЛЭЛ", href: "/news" },
+  { label: "ҮЙЛЧИЛГЭЭ", href: "/services" },
+  { label: "ГОМДОЛ САНАЛ", href: "/complaints" },
+  { label: "ХОЛБОО БАРИХ", href: "/contact" },
 ];
 
 const slides = [
@@ -38,13 +39,13 @@ export default function CICHomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
           <div className="flex h-16 items-center gap-8 lg:h-20">
             {/* Logo */}
-            <a
-              href="#"
+            <Link
+              href="/"
               className="flex shrink-0 items-center"
               aria-label="LKM - Нүүр хуудас"
             >
               <Image src="/logo.jpg" alt="LKM Logo" width={80} height={20} />
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav
@@ -52,14 +53,14 @@ export default function CICHomePage() {
               aria-label="Үндсэн цэс"
             >
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="flex items-center gap-0.5 px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
                 >
                   {item.label}
-                  {item && <ChevronDown className="h-3.5 w-3.5" />}
-                </a>
+                  {/* {item && <ChevronDown className="h-3.5 w-3.5" />} */}
+                </Link>
               ))}
             </nav>
 
@@ -72,19 +73,16 @@ export default function CICHomePage() {
             >
               <div className="flex flex-col gap-1.5">
                 <span
-                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
-                    mobileMenuOpen ? "translate-y-2 rotate-45" : ""
-                  }`}
+                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${mobileMenuOpen ? "translate-y-2 rotate-45" : ""
+                    }`}
                 />
                 <span
-                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
-                    mobileMenuOpen ? "opacity-0" : ""
-                  }`}
+                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""
+                    }`}
                 />
                 <span
-                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${
-                    mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
-                  }`}
+                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
+                    }`}
                 />
               </div>
             </button>
@@ -98,14 +96,14 @@ export default function CICHomePage() {
             >
               <div className="flex flex-col gap-1 pt-2">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
                     href={item.href}
                     className="flex items-center justify-between px-2 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
                   >
                     {item.label}
-                    {item && <ChevronDown className="h-4 w-4" />}
-                  </a>
+                    {/* {item && <ChevronDown className="h-4 w-4" />} */}
+                  </Link>
                 ))}
               </div>
               <div className="flex items-center gap-4 border-t border-border px-2 pt-4"></div>
@@ -123,9 +121,8 @@ export default function CICHomePage() {
           {slides.map((slide, index) => (
             <div
               key={slide.src}
-              className={`absolute inset-0 transition-opacity duration-700 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
               aria-hidden={index !== currentSlide}
             >
               <Image
@@ -146,11 +143,10 @@ export default function CICHomePage() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "scale-110 bg-background"
-                  : "bg-background/50 hover:bg-background/75"
-              }`}
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${index === currentSlide
+                ? "scale-110 bg-background"
+                : "bg-background/50 hover:bg-background/75"
+                }`}
               aria-label={`Слайд ${index + 1}-рүү очих`}
               aria-current={index === currentSlide ? "true" : undefined}
             />

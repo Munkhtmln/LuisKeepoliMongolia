@@ -1,25 +1,5 @@
 import { NewsCard } from "./NewsCard";
-
-const newsItems = [
-  {
-    image: "/zurg3.jpg",
-    title: "Санамж бичигт гарын үсэг зурлаа",
-    description:
-      'Үндэсний Итгэмжлэлийн Төв, "Си Си Ай Си Эм Эн Эйч Кэй" ХХК, МонСертф, ISA "Хамтын ажиллагааны санамж бичиг"-т гарын үсэг зурах үйл ажиллагаа',
-  },
-  {
-    image: "/zurg3.jpg",
-    title: "Итгэмжлэх хугацааг сунгалаа",
-    description:
-      "Үндэсний итгэмжлэлийн төвийн даргын 2025 оны А/27 тоот тушаалаар итгэмжлэлийн хугацааг 4 жилээр сунгуулан итгэмжлэлийн гэрчилгээгээ гардан авлаа.",
-  },
-  {
-    image: "/zurg3.jpg",
-    title: "CCIC группийн сагсан бөмбөгийн тэмцээнд амжилттай оролцлоо",
-    description:
-      "CCIC группийн сагсан бөмбөгийн тэмцээнд CCICMNHK LLC-н залуус амжилт гаргалаа.",
-  },
-];
+import { newsItems } from "../news/newsData";
 
 export default function NewsSection() {
   return (
@@ -42,6 +22,7 @@ export default function NewsSection() {
                 image={item.image}
                 title={item.title}
                 description={item.description}
+                slug={item.slug}
               />
             ))}
           </div>

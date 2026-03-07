@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Body() {
   return (
@@ -16,12 +17,12 @@ export default function Body() {
               }
             </p>
             <div className="mt-8">
-              <a
-                href="#"
+              <Link
+                href="/news"
                 className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 Дэлгэрэнгүй
-              </a>
+              </Link>
             </div>
           </div>
 
