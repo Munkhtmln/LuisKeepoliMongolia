@@ -3,156 +3,127 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Search, Youtube, Mail } from "lucide-react";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "НҮҮР ХУУДАС", href: "/" },
   { label: "БИДНИЙ ТУХАЙ", href: "/about" },
   { label: "МЭДЭЭ, МЭДЭЭЛЭЛ", href: "/news" },
   { label: "ҮЙЛЧИЛГЭЭ", href: "/services" },
-  { label: "ГОМДОЛ САНАЛ", href: "/complaints" },
+  { label: "ГОМДОЛ САНАЛ", href: "/feedback" },
   { label: "ХОЛБОО БАРИХ", href: "/contact" },
 ];
 
-const slides = [
-  { src: "/zurg1.jpg", alt: "Химийн лабораторид ажиллаж буй судлаачид" },
-  { src: "/zurg2.jpg", alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж" },
-];
+export default function Header() {
+  const [scrollY, setScrollY] = useState(0);
+  const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
 
-export default function CICHomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const handleScroll = useCallback(() => {
+    setScrollY(window.scrollY);
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [nextSlide]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  // Opacity increases with scroll: 0 at top -> 1 when scrolled (e.g. after 80px)
+  const scrollThreshold = 80;
+  const opacity = Math.min(1, scrollY / scrollThreshold);
 
   return (
-    <div className="min-h-100 bg-background">
-      {/* Header */}
-      <header className="bg-background border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
-          <div className="flex h-16 items-center gap-8 lg:h-20">
-            {/* Logo */}
+    <header
+      className={cn(
+        "sticky top-0 z-40 w-full transition-all duration-300 ease-out",
+        "bg-white/70 backdrop-blur-md border-b border-white/20",
+        "supports-backdrop-filter:bg-white/60"
+      )}
+      style={{
+        backgroundColor: `rgba(255, 255, 255, ${0.6 + opacity * 0.4})`,
+      }}
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
+          {/* Logo - overflowing (visible overflow, no shrink) */}
+          <div className="relative flex shrink-0 overflow-visible">
             <Link
               href="/"
-              className="flex shrink-0 items-center"
+              className="flex items-center overflow-visible"
               aria-label="LKM - Нүүр хуудас"
             >
-              <Image src="/logo.jpg" alt="LKM Logo" width={80} height={20} />
+              <Image
+                src="/logo.jpg"
+                alt="LKM Logo"
+                width={100}
+                height={32}
+                className="h-8 w-auto min-w-[80px] object-contain sm:h-9 lg:h-10 lg:min-w-[100px]"
+              />
             </Link>
-
-            {/* Desktop Navigation */}
-            <nav
-              className="hidden items-center gap-1 lg:flex"
-              aria-label="Үндсэн цэс"
-            >
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-0.5 px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
-                >
-                  {item.label}
-                  {/* {item && <ChevronDown className="h-3.5 w-3.5" />} */}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="flex items-center justify-center lg:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Цэс хаах" : "Цэс нээх"}
-              aria-expanded={mobileMenuOpen}
-            >
-              <div className="flex flex-col gap-1.5">
-                <span
-                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${mobileMenuOpen ? "translate-y-2 rotate-45" : ""
-                    }`}
-                />
-                <span
-                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""
-                    }`}
-                />
-                <span
-                  className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""
-                    }`}
-                />
-              </div>
-            </button>
           </div>
 
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <nav
-              className="border-t border-border pb-4 lg:hidden"
-              aria-label="Мобайл цэс"
-            >
-              <div className="flex flex-col gap-1 pt-2">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="flex items-center justify-between px-2 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
-                  >
-                    {item.label}
-                    {/* {item && <ChevronDown className="h-4 w-4" />} */}
-                  </Link>
-                ))}
-              </div>
-              <div className="flex items-center gap-4 border-t border-border px-2 pt-4"></div>
-            </nav>
-          )}
-        </div>
-      </header>
+          {/* Desktop Navigation */}
+          <nav
+            className="hidden items-center gap-1 lg:flex"
+            aria-label="Үндсэн цэс"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="flex items-center gap-0.5 px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-      {/* Hero Carousel */}
-      <section
-        className="relative w-full px-33  py-10 overflow-hidden"
-        aria-label="Зургийн слайд"
-      >
-        <div className="relative aspect-[16/7] w-50vw px-10 sm:aspect-[16/8] lg:aspect-[16/5]">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.src}
-              className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                }`}
-              aria-hidden={index !== currentSlide}
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                className="object-cover rounded-2xl"
-                priority={index === 0}
-                sizes="50vw"
-              />
-            </div>
-          ))}
+          {/* Mobile: Sheet trigger */}
+          <div className="flex lg:hidden">
+            <Sheet open={mobileSheetOpen} onOpenChange={setMobileSheetOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="inline-flex size-10 items-center justify-center rounded-md text-foreground transition-colors hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  aria-label={mobileSheetOpen ? "Цэс хаах" : "Цэс нээх"}
+                  aria-expanded={mobileSheetOpen}
+                >
+                  <Menu className="size-6" />
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-full max-w-xs border-l bg-white/95 backdrop-blur-md sm:max-w-sm"
+              >
+                <SheetHeader className="sr-only">
+                  <SheetTitle>Цэс</SheetTitle>
+                </SheetHeader>
+                <nav
+                  className="flex flex-col gap-1 pt-6"
+                  aria-label="Мобайл цэс"
+                >
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setMobileSheetOpen(false)}
+                      className="rounded-lg px-3 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:bg-black/5 hover:text-primary"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-
-        {/* Carousel Dots */}
-        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${index === currentSlide
-                ? "scale-110 bg-background"
-                : "bg-background/50 hover:bg-background/75"
-                }`}
-              aria-label={`Слайд ${index + 1}-рүү очих`}
-              aria-current={index === currentSlide ? "true" : undefined}
-            />
-          ))}
-        </div>
-      </section>
-    </div>
+      </div>
+    </header>
   );
 }
