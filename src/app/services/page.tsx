@@ -12,7 +12,7 @@ export default function ServicesPage() {
           {/* Left column text */}
           <section className="lg:w-4/12">
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl leading-snug">
-              &quot;Си Си Ай Си Эм Эн Эйч Кэй&quot; ХХК нь 3 төрлийн үйлчилгээ
+              &quot;Луис кееполи Монголиа &quot; ХХК нь 2 төрлийн үйлчилгээ
               үзүүлж байна.
             </h1>
             <div className="mt-4 h-0.5 w-16 bg-primary/60" />
@@ -56,4 +56,3 @@ export default function ServicesPage() {
     </main>
   );
 }
-

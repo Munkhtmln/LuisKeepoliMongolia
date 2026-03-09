@@ -17,8 +17,8 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
             Мэдээ олдсонгүй
           </h1>
           <p className="mt-4 text-base leading-relaxed text-foreground/80">
-            Хайлтын үр дүнд тохирох мэдээ олдсонгүй. Та жагсаалтаас дахин
-            сонгон үзнэ үү.
+            Хайлтын үр дүнд тохирох мэдээ олдсонгүй. Та жагсаалтаас дахин сонгон
+            үзнэ үү.
           </p>
         </div>
       </main>
@@ -40,7 +40,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
               />
             </div>
             <p className="mt-3 text-sm text-foreground/70 text-center">
-              &quot;CCICMNHK&quot; LLC
+              &quot;Luis keepoli Mongolia&quot; LLC
             </p>
           </div>
           <div className="flex-1 min-w-0">

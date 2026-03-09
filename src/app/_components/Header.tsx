@@ -51,7 +51,7 @@ export default function Header() {
       }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
+        <div className="flex h-16 items-center  gap-20 lg:h-20">
           {/* Logo - overflowing (visible overflow, no shrink) */}
           <div className="relative flex shrink-0 overflow-visible">
             <Link

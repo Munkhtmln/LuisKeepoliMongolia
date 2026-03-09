@@ -9,16 +9,19 @@ export default function Body() {
           {/* Left: Text Content */}
           <div className="flex flex-col bg-blue-50 px-8 justify-center lg:w-5/12">
             <h2 className="text-balance text-l font-bold leading-tight text-foreground sm:text-xl lg:text-2xl">
-              {'"Luis Keepoli Mongolia" ХХК-ийн үйл ажиллагаатай танилцлаа'}
+              {"“Луис кееполи Монголиа” ХХК-ийн товч танилцуулга"}
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-foreground/70 sm:text-lg">
-              {
-                'Үндэсний Итгэмжлэлийн төвийн дарга С.Ням-Эрдэнэ, удирдлагууд "Эрдэнэт үйлдвэр" ТӨҮГ-ын Чанар, хяналтын хэлтсийн дарга С.Ганцогт болон лабораториудын эрхлэгч нар "Си Си Ай Си Эм Эн Эйч Кэй" ХХК лабораторийн үйл ажиллагаатай танилцлаа.'
-              }
+              &quot;“Луис кееполи Монголиа” ХХК (цаашид “Манай компани” гэх) нь
+              Өвөр Монголын ”Луис кееполи туршилт, технологи” ХХК-ийн 100%
+              хөрөнгө оруулалттай, Өвөр Монголын анхны хил дамнасан шинжилгээний
+              эрх бүхий байгууллага бөгөөд 2024 оны 5 дугаар сарын 10-ны өдөр
+              Монгол Улсад албан ёсоор бүртгэгдэн байгуулагдсан. Лабораторийн
+              нийт хөрөнгө оруулалт 670,000 ам.доллар.&quot;
             </p>
             <div className="mt-8">
               <Link
-                href="/news"
+                href="/about"
                 className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 Дэлгэрэнгүй
@@ -31,8 +34,8 @@ export default function Body() {
             {/* Top Large Image */}
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
               <Image
-                src="/zurg3.jpg"
-                alt="CCIC барилга"
+                src="/bidnii-tuhai3.jpg"
+                alt="LuisKM "
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 58vw"
@@ -42,8 +45,8 @@ export default function Body() {
             <div className="flex gap-4">
               <div className="relative aspect-[4/3] w-2/3 overflow-hidden rounded-lg">
                 <Image
-                  src="/zurg3.jpg"
-                  alt="CCIC коридор"
+                  src="/bidnii-tuhai1.JPG"
+                  alt="LuisKM "
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 66vw, 38vw"
@@ -51,8 +54,8 @@ export default function Body() {
               </div>
               <div className="relative aspect-[4/3] w-1/3 overflow-hidden rounded-lg">
                 <Image
-                  src="/zurg4.jpg"
-                  alt="CCIC уулзалт"
+                  src="/bidnii-tuhai2.jpg"
+                  alt="LuisKM "
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 33vw, 20vw"

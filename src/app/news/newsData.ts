@@ -6,27 +6,26 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
-  {
-    slug: "sanamj-bichig-gariin-useg",
-    image: "/zurg3.jpg",
-    title: "Санамж бичигт гарын үсэг зурлаа",
-    description:
-      'Үндэсний Итгэмжлэлийн Төв, "Си Си Ай Си Эм Эн Эйч Кэй" ХХК, МонСертф, ISA "Хамтын ажиллагааны санамж бичиг"-т гарын үсэг зурах үйл ажиллагаа',
-  },
+  // {
+  //   slug: "sanamj-bichig-gariin-useg",
+  //   image: "/zurg3.jpg",
+  //   title: "Сургалтанд хамрагдлаа",
+  //   description: "",
+  // },
   {
     slug: "itgemjleh-hugatsaa-sungalaa",
     image: "/zurg3.jpg",
-    title: "Итгэмжлэх хугацааг сунгалаа",
+    title: "Итгэмжлэх хугацаа",
     description:
-      "Үндэсний итгэмжлэлийн төвийн даргын 2025 оны А/27 тоот тушаалаар итгэмжлэлийн хугацааг 4 жилээр сунгуулан итгэмжлэлийн гэрчилгээгээ гардан авлаа.",
+      "Хяналтын ажил эрхэлдэг төрөл бүрийн байгууллагын үйл ажиллагаанд тавих шаардлага”  MNS ISO/IEC 17020 стандартын дагуу Монгол Улсын Үндэсний Итгэмжлэлийн Төвийн даргын 2025 оны 09-р сарын 03-ны өдрийн А/204 тоот тушаалаар итгэмжлэгдэн техникийн хяналтын чиглэлээр  үйл ажиллагаа явуулж байна.",
   },
-  {
-    slug: "basketball-temtseend-amjilttai-oroltssloo",
-    image: "/zurg3.jpg",
-    title: "CCIC группийн сагсан бөмбөгийн тэмцээнд амжилттай оролцлоо",
-    description:
-      "CCIC группийн сагсан бөмбөгийн тэмцээнд CCICMNHK LLC-н залуус амжилт гаргалаа.",
-  },
+  // {
+  //   slug: "basketball-temtseend-amjilttai-oroltssloo",
+  //   image: "/zurg3.jpg",
+  //   title: "CCIC группийн сагсан бөмбөгийн тэмцээнд амжилттай оролцлоо",
+  //   description:
+  //     "CCIC группийн сагсан бөмбөгийн тэмцээнд CCICMNHK LLC-н залуус амжилт гаргалаа.",
+  // },
 ];
 
 export function getNewsBySlug(slug: string): NewsItem | undefined {

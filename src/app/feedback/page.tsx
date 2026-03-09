@@ -6,13 +6,21 @@ const FEEDBACK_EMAIL = "complaints@example.com";
 
 export default function FeedbackPage() {
   const [, setStatus] = useState<"idle" | "opening" | "error">("idle");
+  const [error, setError] = useState("");
 
+  const handleClick = (e: { preventDefault: () => void }) => {
+    e.preventDefault(); // stop form submit
+    setError("Одоогоор санал гомдол хүлээн авах боломжгүй байна");
+  };
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const applicantType = data.get("applicantType") === "legal" ? "Өргөдөл хуулийн этгээд" : "Өргөдөл иргэн";
+    const applicantType =
+      data.get("applicantType") === "legal"
+        ? "Өргөдөл хуулийн этгээд"
+        : "Өргөдөл иргэн";
     const fullName = (data.get("fullName") as string)?.trim() || "";
     const emailVal = (data.get("email") as string)?.trim() || "";
     const phone = (data.get("phone") as string)?.trim() || "";
@@ -32,7 +40,9 @@ export default function FeedbackPage() {
       content,
     ].join("\n");
 
-    const mailto = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject || "Өргөдөл / Гомдол")}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(
+      subject || "Өргөдөл / Гомдол"
+    )}&body=${encodeURIComponent(body)}`;
     setStatus("opening");
     try {
       window.location.href = mailto;
@@ -52,10 +62,11 @@ export default function FeedbackPage() {
               САНАЛ, ӨРГӨДӨЛ, ГОМДОЛ ХҮЛЭЭН АВАХ
             </h1>
             <p className="mt-6 text-base leading-relaxed text-foreground/80">
-              &quot;Си Си Ай Си Эм Эн Кэй&quot; ХХК‑ийн лабораторийн үйл ажиллагаа
-              болон лабораторийн сорил шинжилгээний ажлын чанар, бусад асуудлаар
-              лабораторийн удирдлага, албаны тушаалтанд хандаж гаргах санал,
-              хүсэлт, гомдол, өргөдлийг хүлээн авч шийдвэрлэхэд зориулагдана.
+              &quot;Луис кееполи Монголиа&quot; ХХК‑ийн лабораторийн үйл
+              ажиллагаа болон лабораторийн сорил шинжилгээний ажлын чанар, бусад
+              асуудлаар лабораторийн удирдлага, албаны тушаалтанд хандаж гаргах
+              санал, хүсэлт, гомдол, өргөдлийг хүлээн авч шийдвэрлэхэд
+              зориулагдана.
             </p>
 
             <h2 className="mt-8 text-base font-semibold text-foreground">
@@ -63,8 +74,8 @@ export default function FeedbackPage() {
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/80">
               <li>
-                Иргэн өргөдөл, гомдолд гардаж өгч буй, эсхүл цахим шуудангийн хаяг,
-                утасны дугаараа тодорхой бичиж, гарын үсэг зурна.
+                Иргэн өргөдөл, гомдолд гардаж өгч буй, эсхүл цахим шуудангийн
+                хаяг, утасны дугаараа тодорхой бичиж, гарын үсэг зурна.
               </li>
               <li>
                 Өргөдөл, гомдолд дурдсан асуудал бодит, баримтад үндэслэгдсэн,
@@ -77,21 +88,18 @@ export default function FeedbackPage() {
               Өргөдөл, гомдлыг шийдвэрлэх, хариу өгөх хугацаа
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-              Санал гомдлыг хуулийн хугацаанд буюу 30 хоногт багтаан шийдвэрлэнэ.
-              Зайлшгүй тохиолдолд 15 хоногоор нэг удаа сунгаж болох ба сунгасан
-              тухай өргөдөл гаргагчид мэдэгдэнэ. Аливаа санал гомдлыг орж ирсэн өдрөөс
-              эхлэн бүртгэн авч архивын сан хөмрөгт хамгийн багадаа 3 жилийн
-              хугацаанд хадгална.
+              Санал гомдлыг хуулийн хугацаанд буюу 30 хоногт багтаан
+              шийдвэрлэнэ. Зайлшгүй тохиолдолд 15 хоногоор нэг удаа сунгаж болох
+              ба сунгасан тухай өргөдөл гаргагчид мэдэгдэнэ. Аливаа санал
+              гомдлыг орж ирсэн өдрөөс эхлэн бүртгэн авч архивын сан хөмрөгт
+              хамгийн багадаа 3 жилийн хугацаанд хадгална.
             </p>
           </section>
 
           {/* Right: form */}
           <section>
             <div className="rounded-xl bg-background shadow-sm ring-1 ring-border">
-              <form
-                className="space-y-6 p-6 sm:p-8"
-                onSubmit={handleSubmit}
-              >
+              <form className="space-y-6 p-6 sm:p-8" onSubmit={handleSubmit}>
                 <div>
                   <p className="text-sm font-medium text-foreground">
                     Өргөдөл илгээх төрөл
@@ -218,13 +226,18 @@ export default function FeedbackPage() {
                   </div>
                 </div>
 
-                <div className="pt-2">
+                <div>
                   <button
                     type="submit"
+                    onClick={handleClick}
                     className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     Өргөдөл илгээх
                   </button>
+
+                  {error && (
+                    <p className="mt-2 text-sm text-red-500">{error}</p>
+                  )}
                 </div>
               </form>
             </div>
