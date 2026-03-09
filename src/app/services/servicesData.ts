@@ -18,7 +18,7 @@ export interface ServiceItem {
 export const services: ServiceItem[] = [
   {
     slug: "tehnikiin-hyanaltyn-alba",
-    image: "/uil-ajillagaa3.jpg",
+    image: "/uil-ajillagaa3.JPG",
     title: "Техникийн хяналтын алба",
     description:
       "Техникийн хяналтын албаны  ажилтнууд нь СХЗГазар болон Монгол Улсын Шинжлэх ухаан, технологийн их сургуулиас 2019-2025 онуудад зохион .....",

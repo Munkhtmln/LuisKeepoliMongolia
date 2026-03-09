@@ -34,7 +34,7 @@ export default function Body() {
             {/* Top Large Image */}
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
               <Image
-                src="/bidnii-tuhai3.jpg"
+                src="/bidnii-tuhai3.JPG"
                 alt="LuisKM "
                 fill
                 className="object-cover"
@@ -54,7 +54,7 @@ export default function Body() {
               </div>
               <div className="relative aspect-[4/3] w-1/3 overflow-hidden rounded-lg">
                 <Image
-                  src="/bidnii-tuhai2.jpg"
+                  src="/bidnii-tuhai2.JPG"
                   alt="LuisKM "
                   fill
                   className="object-cover"
