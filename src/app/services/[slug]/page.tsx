@@ -5,7 +5,9 @@ interface ServiceDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
+export default async function ServiceDetailPage({
+  params,
+}: ServiceDetailPageProps) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
 
@@ -17,7 +19,8 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             Үйлчилгээ олдсонгүй
           </h1>
           <p className="mt-4 text-base leading-relaxed text-foreground/80">
-            Хайлтын үр дүнд тохирох үйлчилгээ олдсонгүй. Та жагсаалтаас дахин сонгон үзнэ үү.
+            Хайлтын үр дүнд тохирох үйлчилгээ олдсонгүй. Та жагсаалтаас дахин
+            сонгон үзнэ үү.
           </p>
         </div>
       </main>
@@ -40,7 +43,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               />
             </div>
             <p className="mt-3 text-center text-sm text-foreground/80">
-              &quot;CCICMNHK&quot; LLC
+              &quot;LuiskeepoliMongolia&quot; LLC
             </p>
           </div>
           <div className="order-1 lg:order-2 flex-1 min-w-0">

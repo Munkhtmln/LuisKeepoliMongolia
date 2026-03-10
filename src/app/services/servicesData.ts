@@ -29,7 +29,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "Nuursnii-sorilt-shinzhilgeenii-laboratoriin",
-    image: "/zurg1.jpg",
+    image: "/uil-ajillagaa2.JPG",
     title: "Нүүрсний сорилт шинжилгээний лаборатори",
     description:
       "Нүүрсний сорилт, шинжилгээний лаборатори нь MNS ISO/IEC 17025:2018 стандартын шаардлага хангасан ....",

@@ -10,8 +10,14 @@ import ArticleSection from "./_components/Article-Section";
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    { src: "/zurg1.jpg", alt: "Химийн лабораторид ажиллаж буй судлаачид" },
-    { src: "/zurg2.jpg", alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж" },
+    {
+      src: "/uil-ajillagaa2.JPG",
+      alt: "Химийн лабораторид ажиллаж буй судлаачид",
+    },
+    {
+      src: "/uil-ajillagaa1.JPG",
+      alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж",
+    },
   ];
   return (
     <div className="">
@@ -24,8 +30,9 @@ export default function Home() {
             {slides.map((slide, index) => (
               <div
                 key={slide.src}
-                className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
                 aria-hidden={index !== currentSlide}
               >
                 <Image
@@ -47,10 +54,11 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${index === currentSlide
-                ? "scale-110 bg-background"
-                : "bg-background/50 hover:bg-background/75"
-                }`}
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "scale-110 bg-background"
+                  : "bg-background/50 hover:bg-background/75"
+              }`}
               aria-label={`Слайд ${index + 1}-рүү очих`}
               aria-current={index === currentSlide ? "true" : undefined}
             />
