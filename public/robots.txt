@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.luiskeepoli-mongolia.com
+
+# Sitemaps
+Sitemap: https://www.luiskeepoli-mongolia.com/sitemap.xml
