@@ -55,7 +55,7 @@ export default function FeedbackPage() {
   return (
     <main className="bg-muted/40 py-16 h-full flex-1">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
           {/* Left: instructions */}
           <section>
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -97,7 +97,7 @@ export default function FeedbackPage() {
           </section>
 
           {/* Right: form */}
-          <section>
+          {/* <section>
             <div className="rounded-xl bg-background shadow-sm ring-1 ring-border">
               <form className="space-y-6 p-6 sm:p-8" onSubmit={handleSubmit}>
                 <div>
@@ -240,6 +240,18 @@ export default function FeedbackPage() {
                   )}
                 </div>
               </form>
+            </div>
+          </section> */}
+          <section className="flex items-center justify-center">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold">Contact us</h2>
+
+              <a
+                href="mailto:example@gmail.com"
+                className="mt-2 block text-primary underline hover:text-primary/80"
+              >
+                example@mail.com
+              </a>
             </div>
           </section>
         </div>

@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   { label: "НҮҮР ХУУДАС", href: "/" },
   { label: "БИДНИЙ ТУХАЙ", href: "/about" },
-  { label: "МЭДЭЭ, МЭДЭЭЛЭЛ", href: "/news" },
+  { label: "ХЭРЭГЛЭГЧИЙН ХЭСЭГ", href: "/user" },
   { label: "ҮЙЛЧИЛГЭЭ", href: "/services" },
   { label: "ГОМДОЛ САНАЛ", href: "/feedback" },
   { label: "ХОЛБОО БАРИХ", href: "/contact" },

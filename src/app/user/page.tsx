@@ -8,11 +8,11 @@ export default function NewsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Мэдээ, мэдээлэл
+            Хэрэглэгчийн хэсэг
           </h1>
           <p className="mt-6 text-base leading-relaxed text-foreground/80">
             Компанийн үйл ажиллагаа, шинэчлэл, арга хэмжээ, төслүүдтэй холбоотой
-            мэдээ мэдээллийг энэ хэсгээс авах боломжтой.
+            хэрэглэгчдэд хүрэх мэдээллийг энэ хэсгээс авах боломжтой.
           </p>
         </div>
       </div>
@@ -20,4 +20,3 @@ export default function NewsPage() {
     </main>
   );
 }
-
