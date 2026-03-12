@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="bg-[#263280] text-white px-6 py-4 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs text-white/80">
           {
-            'Copyright ©2025 "Luis Keepoli Mongolia" ХХК, Бүх эрх хуулиар хамгаалагдсан.'
+            'Copyright ©2026 "Luis Keepoli Mongolia" ХХК, Бүх эрх хуулиар хамгаалагдсан.'
           }
         </p>
 
