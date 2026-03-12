@@ -6,12 +6,14 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "НҮҮР ХУУДАС", href: "/" },
@@ -51,7 +53,7 @@ export default function Header() {
       }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center  gap-20 lg:h-20">
+        <div className="flex h-16 items-center  gap-50 lg:h-20">
           {/* Logo - overflowing (visible overflow, no shrink) */}
           <div className="relative flex shrink-0 overflow-visible">
             <Link
@@ -86,7 +88,7 @@ export default function Header() {
           </nav>
 
           {/* Mobile: Sheet trigger */}
-          <div className="flex lg:hidden">
+          <div className="flex items-center lg:hidden">
             <Sheet open={mobileSheetOpen} onOpenChange={setMobileSheetOpen}>
               <SheetTrigger asChild>
                 <button
@@ -99,7 +101,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-full max-w-xs border-l bg-white/95 backdrop-blur-md sm:max-w-sm"
+                className="w-full max-w-3xs border-l bg-white/95 backdrop-blur-md sm:max-w-sm"
               >
                 <SheetHeader className="sr-only">
                   <SheetTitle>Цэс</SheetTitle>
@@ -118,7 +120,15 @@ export default function Header() {
                       {item.label}
                     </Link>
                   ))}
-                </nav>
+                </nav>{" "}
+                <SheetClose asChild>
+                  <Button
+                    variant="outline"
+                    className="border-0 bg-transparent hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring absolute top-4 right-4"
+                  >
+                    X
+                  </Button>
+                </SheetClose>
               </SheetContent>
             </Sheet>
           </div>

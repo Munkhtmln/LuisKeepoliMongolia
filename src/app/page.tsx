@@ -66,13 +66,9 @@ export default function Home() {
         </div>
       </section>
       <Body />
-      {/* <Body2 /> */}
       <ArticleSection />
-      {/* <FeaturedArticle /> */}
       <Bracket />
       <ServicesSection />
-      {/* <BranchesSection /> */}
-      {/* <PartnersSection /> */}
     </div>
   );
 }
