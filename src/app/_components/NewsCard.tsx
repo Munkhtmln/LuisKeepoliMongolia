@@ -20,12 +20,12 @@ export function NewsCard({ image, title, description, slug }: NewsCardProps) {
           {description}
         </p>
         <div className="mt-4 sm:mt-5">
-          <Link
+          {/* <Link
             href={`/user/${slug}`}
             className="inline-flex items-center justify-center rounded-md bg-muted px-6 py-2.5 text-sm font-medium text-foreground hover:bg-muted/80 transition-colors"
           >
             Дэлгэрэнгүй
-          </Link>
+          </Link> */}
         </div>
       </div>
       {/* Image: right on desktop, above text on mobile */}

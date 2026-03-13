@@ -7,7 +7,7 @@ import { services } from "./servicesData";
 export default function ServicesPage() {
   return (
     <main className="bg-muted/40 py-16 h-full">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row">
           {/* Left column text */}
           <section className="lg:w-4/12">
@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
           {/* Right column service cards */}
           <section className="lg:w-8/12">
-            <div className="grid gap-10 md:grid-cols-3">
+            <div className="grid gap-10 md:grid-cols-2">
               {services.map((service) => (
                 <article key={service.title} className="flex flex-col">
                   <div className="relative w-full aspect-4/3 overflow-hidden">
@@ -28,7 +28,7 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-xl"
                     />
                   </div>
                   <div className="flex flex-1 flex-col pt-5">

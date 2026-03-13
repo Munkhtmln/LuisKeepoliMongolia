@@ -12,11 +12,11 @@ export default function Home() {
 
   const slides = [
     {
-      src: "/uil-ajillagaa2.JPG",
+      src: "/DSCN0645.JPG",
       alt: "Химийн лабораторид ажиллаж буй судлаачид",
     },
     {
-      src: "/uil-ajillagaa1.JPG",
+      src: "/DSCN0643.JPG",
       alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж",
     },
   ];
@@ -58,30 +58,6 @@ export default function Home() {
             ))}
 
             {/* Corner Triangles */}
-
-            {/* Top Left */}
-            <div
-              className="absolute top-0 left-0 z-10 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-black"
-              style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
-            />
-
-            {/* Top Right */}
-            <div
-              className="absolute top-0 right-0 z-10 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-black"
-              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%)" }}
-            />
-
-            {/* Bottom Left */}
-            <div
-              className="absolute bottom-0 left-0 z-10 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-black"
-              style={{ clipPath: "polygon(0 0, 100% 100%, 0 100%)" }}
-            />
-
-            {/* Bottom Right */}
-            <div
-              className="absolute bottom-0 right-0 z-10 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-black"
-              style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
-            />
           </div>
         </div>
 
@@ -104,8 +80,8 @@ export default function Home() {
       </section>
 
       <Body />
-      <ArticleSection />
-      <Bracket />
+      {/* <ArticleSection /> */}
+      {/* <Bracket /> */}
       <ServicesSection />
     </div>
   );

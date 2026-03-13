@@ -7,7 +7,7 @@ export default function Body() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
           {/* Left: Text Content */}
-          <div className="flex flex-col bg-blue-50 px-8 justify-center lg:w-5/12">
+          <div className="flex flex-col bg-blue-50 px-8 p-5 justify-center lg:w-5/12">
             <h2 className="text-balance text-l font-bold leading-tight text-foreground sm:text-xl lg:text-2xl">
               {"“Луис кееполи Монголиа” ХХК-ийн товч танилцуулга"}
             </h2>
@@ -15,9 +15,7 @@ export default function Body() {
               &quot;“Луис кееполи Монголиа” ХХК (цаашид “Манай компани” гэх) нь
               Өвөр Монголын ”Луис кееполи туршилт, технологи” ХХК-ийн 100%
               хөрөнгө оруулалттай, Өвөр Монголын анхны хил дамнасан шинжилгээний
-              эрх бүхий байгууллага бөгөөд 2024 оны 5 дугаар сарын 10-ны өдөр
-              Монгол Улсад албан ёсоор бүртгэгдэн байгуулагдсан. Лабораторийн
-              нийт хөрөнгө оруулалт 670,000 ам.доллар.&quot;
+              эрх бүхий байгууллага бөгөөд...&quot;
             </p>
             <div className="mt-8">
               <Link
@@ -30,11 +28,11 @@ export default function Body() {
           </div>
 
           {/* Right: Image Grid */}
-          <div className="flex flex-col gap-4 lg:w-7/12">
+          <div className="flex flex-col gap-4  lg:w-7/12">
             {/* Top Large Image */}
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
               <Image
-                src="/bidnii-tuhai3.JPG"
+                src="/DSCN0642.JPG"
                 alt="LuisKM "
                 fill
                 className="object-cover"
@@ -42,7 +40,7 @@ export default function Body() {
               />
             </div>
             {/* Bottom Two Images */}
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <div className="relative aspect-[4/3] w-2/3 overflow-hidden rounded-lg">
                 <Image
                   src="/bidnii-tuhai1.JPG"
@@ -61,7 +59,7 @@ export default function Body() {
                   sizes="(max-width: 1024px) 33vw, 20vw"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
