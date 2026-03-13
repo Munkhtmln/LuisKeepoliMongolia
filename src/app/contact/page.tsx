@@ -11,7 +11,7 @@ export default function ContactPage() {
           Монгол Улс, Улаанбаатар хот, Хан-Уул дүүрэг, 22-р хороо,Зайсангийн ам.
         </p>
         <p className="mt-1 text-sm sm:text-base text-foreground/80">
-          Утас: 91915176, 99080016 | И-мэйл: example@mail.com
+          Утас: 91915176, 99080016 | И-мэйл: Luiskeepoli0510@gmail.com
         </p>
 
         <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-muted/40">

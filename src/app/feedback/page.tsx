@@ -250,7 +250,7 @@ export default function FeedbackPage() {
                 href="mailto:example@gmail.com"
                 className="mt-2 block text-primary underline hover:text-primary/80"
               >
-                example@mail.com
+                Luiskeepoli0510@gmail.com
               </a>
             </div>
           </section>
