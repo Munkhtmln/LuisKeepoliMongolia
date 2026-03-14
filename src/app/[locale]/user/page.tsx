@@ -10,7 +10,7 @@ export default function NewsPage() {
   return (
     <main className="h-full bg-muted/40 py-16">
       {/* 4 photos under h1 */}
-      <div className="mt-5 mx-auto mb-70 h-[70px] items-center justify-center max-w-7xl">
+      <div className="mt-5 mx-auto mb-20  items-center justify-center max-w-7xl">
         <h1 className="text-2xl m-auto font-bold tracking-tight flex items-center justify-center text-foreground sm:text-3xl">
           {t("userPage.hero.title")}
         </h1>
