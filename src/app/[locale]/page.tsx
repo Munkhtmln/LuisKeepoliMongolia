@@ -82,30 +82,6 @@ export default function Home() {
               aria-current={index === currentSlide ? "true" : undefined}
             />
           ))}
-
-          {/* Modern Progress Navigation */}
-          <div className="absolute bottom-8 right-2 z-120 flex items-center gap-3 bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className="group relative h-1.5 w-12 overflow-hidden rounded-full bg-white/20 transition-all"
-              >
-                <div
-                  className={`absolute inset-0 h-full bg-blue-500 transition-all ${
-                    index === currentSlide
-                      ? "translate-x-0"
-                      : "-translate-x-full"
-                  }`}
-                  style={{
-                    transitionDuration:
-                      index === currentSlide ? "6000ms" : "0ms",
-                    transitionTimingFunction: "linear",
-                  }}
-                />
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
