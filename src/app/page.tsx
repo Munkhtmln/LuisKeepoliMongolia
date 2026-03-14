@@ -19,6 +19,14 @@ export default function Home() {
       src: "/DSCN0643.JPG",
       alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж",
     },
+    {
+      src: "/nvvrs-deej.png",
+      alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж",
+    },
+    {
+      src: "/tehnik.JPG",
+      alt: "Орчин үеийн шинжилгээний тоног төхөөрөмж",
+    },
   ];
 
   // AUTO SLIDE (6 секунд)
@@ -80,7 +88,7 @@ export default function Home() {
       </section>
 
       <Body />
-      {/* <ArticleSection /> */}
+      <ArticleSection />
       {/* <Bracket /> */}
       <ServicesSection />
     </div>

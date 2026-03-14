@@ -13,10 +13,10 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-md border border-border bg-background shadow-sm">
               <div className="relative aspect-video w-full">
                 <Image
-                  src="/bidnii-tuhai1.JPG"
+                  src="/uwurmongol.png"
                   alt="LuisKM группийн үйл ажиллагааны танилцуулга"
                   fill
-                  className="object-cover"
+                  className=""
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
@@ -100,7 +100,7 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-md border border-border bg-background shadow-sm">
                 <div className="relative aspect-4/3 w-full">
                   <Image
-                    src="/bidnii-tuhai3.JPG"
+                    src="/ajilchid.JPG"
                     alt="Luis Keepoli Mongolia хамт олон"
                     fill
                     className="object-cover"

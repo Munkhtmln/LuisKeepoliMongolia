@@ -18,7 +18,7 @@ export interface ServiceItem {
 export const services: ServiceItem[] = [
   {
     slug: "tehnikiin-hyanaltyn-alba",
-    image: "/uil-ajillagaa3.JPG",
+    image: "/nvvrs-deej.png",
     title: "Техникийн хяналтын алба",
     description:
       "Техникийн хяналтын албаны  ажилтнууд нь СХЗГазар болон Монгол Улсын Шинжлэх ухаан, технологийн их сургуулиас 2019-2025 онуудад зохион .....",
@@ -29,7 +29,7 @@ export const services: ServiceItem[] = [
   },
   {
     slug: "Nuursnii-sorilt-shinzhilgeenii-laboratoriin",
-    image: "/DSCN0653.JPG",
+    image: "/lab.png",
     title: "Нүүрсний сорилт шинжилгээний лаборатори",
     description:
       "Нүүрсний сорилт, шинжилгээний лаборатори нь MNS ISO/IEC 17025:2018 стандартын шаардлага хангасан ....",
