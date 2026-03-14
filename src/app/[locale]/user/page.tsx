@@ -9,18 +9,34 @@ export default function NewsPage() {
 
   return (
     <main className="h-full bg-muted/40 py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            {t("userPage.hero.title")}
-          </h1>
-          <p className="mt-6 text-base leading-relaxed text-foreground/80">
-            {t("userPage.hero.description")}
-          </p>
+      {/* 4 photos under h1 */}
+      <div className="mt-5 mx-auto mb-70 h-[70px] items-center justify-center max-w-7xl">
+        <h1 className="text-2xl m-auto font-bold tracking-tight flex items-center justify-center text-foreground sm:text-3xl">
+          {t("userPage.hero.title")}
+        </h1>
+
+        <div className="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="relative aspect-[3/3] h-[300px] overflow-hidden rounded-lg">
+            <Image src="/gerchilgee2.jpg" alt="photo1" fill className="" />
+          </div>
+
+          <div className="relative aspect-[3/3] h-[300px] overflow-hidden rounded-lg">
+            <Image src="/gerchilgee1.jpg" alt="photo2" fill className="" />
+          </div>
+
+          <div className="relative aspect-[3/3] h-[300px] overflow-hidden rounded-lg">
+            <Image src="/udirdlagamn.jpg" alt="photo3" fill className="" />
+          </div>
+
+          <div className="relative aspect-[3/3] h-[300px] overflow-hidden rounded-lg">
+            <Image src="/udirdlagacn.jpg" alt="photo4" fill className="" />
+          </div>
         </div>
       </div>
-      <NewsSection showTitle={false} />;
-      <article className="m-auto flex max-w-[1220px] flex-col gap-6 md:flex-row md:items-center md:gap-8 lg:gap-10 w-full">
+
+      <NewsSection showTitle={false} />
+
+      <article className="m-auto flex max-w-[1220px] w-full flex-col gap-6 md:flex-row md:items-center md:gap-8 lg:gap-10">
         <div className="order-2 min-w-0 flex-1 md:order-1">
           <h3 className="text-xl font-bold leading-tight text-foreground sm:text-2xl">
             {t("userPage.coalIntro.title")}
@@ -31,7 +47,7 @@ export default function NewsPage() {
           <div className="mt-4 sm:mt-5"></div>
         </div>
 
-        <div className="relative order-1 aspect-16/10 w-full shrink-0 overflow-hidden rounded-lg bg-muted md:order-2 md:w-[42%] md:min-w-[320px] md:aspect-4/3">
+        <div className="relative order-1 aspect-[4/3] w-full shrink-0 overflow-hidden rounded-lg bg-muted md:order-2 md:w-[42%] md:min-w-[320px]">
           <Image
             src="/nvvrsjinshin.JPG"
             alt={t("userPage.coalIntro.imageAlt")}
@@ -41,6 +57,7 @@ export default function NewsPage() {
           />
         </div>
       </article>
+
       <section className="bg-background px-6 py-16">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-6 text-2xl font-bold tracking-wide text-foreground">
