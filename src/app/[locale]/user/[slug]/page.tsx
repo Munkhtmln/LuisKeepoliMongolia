@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getNewsBySlug } from "@/lib/newsData";
+import { getNewsBySlug } from "../newsData";
 
 interface NewsDetailPageProps {
   params: Promise<{ locale: string; slug: string }>;

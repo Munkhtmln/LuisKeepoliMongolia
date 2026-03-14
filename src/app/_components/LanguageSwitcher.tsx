@@ -24,7 +24,10 @@ type LanguageSwitcherProps = {
   className?: string;
 };
 
-export function LanguageSwitcher({ onAfterSelect, className }: LanguageSwitcherProps = {}) {
+export function LanguageSwitcher({
+  onAfterSelect,
+  className,
+}: LanguageSwitcherProps = {}) {
   const { locale, setLocale, t } = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -33,7 +36,10 @@ export function LanguageSwitcher({ onAfterSelect, className }: LanguageSwitcherP
 
   const handleSelect = (next: Locale) => {
     setLocale(next);
-    const newPath = next === "mn" && pathWithoutLocale === "/" ? "/mn" : `/${next}${pathWithoutLocale}`;
+    const newPath =
+      next === "mn" && pathWithoutLocale === "/"
+        ? "/mn"
+        : `/${next}${pathWithoutLocale}`;
     router.push(newPath);
     onAfterSelect?.();
   };
@@ -56,7 +62,10 @@ export function LanguageSwitcher({ onAfterSelect, className }: LanguageSwitcherP
             {current.flag}
           </span>
           <span className="min-w-0 truncate">{current.label}</span>
-          <ChevronDown className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+          <ChevronDown
+            className="size-4 shrink-0 text-muted-foreground"
+            aria-hidden
+          />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[140px]">

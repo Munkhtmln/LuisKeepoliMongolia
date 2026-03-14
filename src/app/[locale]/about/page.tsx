@@ -1,20 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export default function AboutPage() {
+  const { t } = useLocale();
+
   return (
     <main className="bg-muted/40 py-12 lg:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10 space-y-20">
-        {/* Hero / Company introduction (matches screenshot layout) */}
+      <div className="mx-auto max-w-6xl space-y-20 px-4 sm:px-6 lg:px-10">
+        {/* Hero / Company introduction */}
         <section aria-labelledby="about-hero-title" className="space-y-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-            {/* Left: hero image */}
             <div className="relative overflow-hidden rounded-md border border-border bg-background shadow-sm">
               <div className="relative aspect-video w-full">
                 <Image
                   src="/uwurmongol.png"
-                  alt="LuisKM группийн үйл ажиллагааны танилцуулга"
+                  alt={t("about.hero.imageAlt")}
                   fill
                   className=""
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -26,82 +28,35 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Right: title + first paragraph */}
             <div className="space-y-4 lg:pl-4">
               <h1
                 id="about-hero-title"
                 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl lg:text-[28px]"
               >
-                &quot;Өвөр Монголын “Луис кееполи туршилт, технологи “ ХХК&quot;
+                {t("about.hero.title")}
               </h1>
               <p className="text-sm leading-relaxed text-foreground/80">
-                Өвөр Монголын “Луис кееполи туршилт, технологи” ХХК (цаашид
-                “Луис кееполи” гэх) нь 2013 онд байгуулагдсан бөгөөд төв байр нь
-                Бугат хотын Их Өгөгдлийн төв Шигуай дүүрэгт байрладаг, 9000 м²
-                талбай бүхий орчин үеийн шинжилгээний цогц баазтай. Тус компани
-                нь “Шударга байдал, Шинэлэг байдал, Нэгдмэл байдал, Үр ашиг,
-                Хариуцлага, Зүтгэл” гэсэн үндсэн үнэт зүйлсийг баримталж, нэг
-                цэгийн иж бүрэн шинжилгээ, сорилтын шийдэл үзүүлэхийг зорин
-                ажилладаг бөгөөд Өвөр Монгол болон Хойд бүсийн хэмжээнд өрсөлдөх
-                чадвартай, нэгдсэн шинжилгээний үйлчилгээний тэргүүлэгч групп
-                болохыг зорилгоо болгосон.
+                {t("about.hero.paragraph1")}
               </p>
             </div>
           </div>
 
-          {/* Hero bottom long text (full width under both columns) */}
           <div className="space-y-3 text-sm leading-relaxed text-foreground/80">
-            <p>
-              Луис кееполи нь Өвөр Монголын гуравдагч талын шинжилгээ,
-              баталгаажуулалтын салбарын жишиг, тэргүүлэгч байгууллага бөгөөд
-              дараах таван үндсэн чиглэлээр бүрэн төлөвшсөн лабораторийн
-              тогтолцоог бүрдүүлсэн. Үүнд: <br />• Хүнс, хөдөө аж ахуйн
-              бүтээгдэхүүн <br />• Байгаль орчин, экологийн шинжилгээ <br /> •
-              Хэмжил зүйн баталгаажуулалт <br /> • Хүдэр, нүүрсний шинжилгээ{" "}
-              <br /> • Хөдөө аж ахуйн хөрс, бордооны шинжилгээ
-            </p>
-            <p>
-              Компанийн хэмжээнд 1000 гаруй иж бүрдэл орчин үеийн дэвшилтэт
-              багаж, тоног төхөөрөмж суурилуулсан бөгөөд 16 шинэ бүтээлийн
-              патент, 30 ашигтай загвар болон гадаад загварын патент, 13
-              программ хангамжийн зохиогчийн эрх эзэмшдэг. Нийт 300 гаруй
-              ажилтантай бөгөөд тэдгээрийн 30 гаруй нь дунд болон ахлах
-              зэрэглэлийн мэргэжлийн цолтой, мэргэжлийн техникийн ажилтнууд нийт
-              ажилтнуудын 70-аас дээш хувийг эзэлдэг.
-            </p>
-            <p>
-              Тус компани нь хэмжил зүй, хүнс, хөдөө аж ахуйн бүтээгдэхүүн,
-              байгаль орчин, хүдэр, нүүрс, ус, хөрс, бордоо зэрэг 11 чиглэлээр
-              5000 гаруй үзүүлэлтийн шинжилгээ хийх эрхтэй. Хөх хот болон Ухай
-              хот дахь хоёр охин компанийн дэмжлэгтэйгээр жил бүр 10,000 гаруй
-              харилцагчид үйлчилгээ үзүүлж, 50,000 орчим шинжилгээний тайлан
-              гаргадаг. Луис кееполи нь улсын зэрэглэлийн В ангиллын
-              лабораторийн платформд тулгуурлан, мэргэжлийн, хараат бус
-              гуравдагч талын үйлчилгээ үзүүлж, төр, аж ахуйн нэгж,
-              хэрэглэгчдийн хоорондын итгэлцлийн гүүрийг бий болгож ажилладаг.{" "}
-              <br /> <b>Компанийн шагнал, өргөмжлөлүүдээс дурдвал:</b> Үндэсний
-              өндөр технологийн аж ахуйн нэгж, Үндэсний/Өөртөө Засах Орон
-              нутгийн Жижиг, дунд аж ахуйн нэгжийн олон нийтийн үйлчилгээний
-              жишиг платформ, Өөртөө Засах Орон нутгийн шилдэг хувийн хэвшлийн
-              аж ахуйн нэгж, Гэрээг чанд мөрдөгч, итгэл хүлээсэн байгууллага,
-              Мэргэшсэн, нарийвчилсан, онцлог, шинэлэг аж ахуйн нэгж, Судалгаа,
-              хөгжүүлэлт ба технологийн төв, Инновацийн болон шинжлэх ухаан,
-              технологид суурилсан ЖДҮ зэрэг олон нэр хүндтэй шагнал, цол
-              хүртсэн.
-            </p>
+            <p>{t("about.hero.paragraph2")}</p>
+            <p>{t("about.hero.paragraph3")}</p>
+            <p>{t("about.hero.paragraph4")}</p>
           </div>
         </section>
 
-        {/* Local company / team section (matches screenshot layout) */}
+        {/* Local company / team section */}
         <section aria-labelledby="about-team-title" className="space-y-6">
           <div className="grid gap-10 lg:grid-cols-[3fr,2fr] lg:items-start">
-            {/* Left: team photo */}
             <div>
               <div className="relative overflow-hidden rounded-md border border-border bg-background shadow-sm">
                 <div className="relative aspect-4/3 w-full">
                   <Image
                     src="/ajilchid.JPG"
-                    alt="Luis Keepoli Mongolia хамт олон"
+                    alt={t("about.team.imageAlt")}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 60vw"
@@ -113,136 +68,60 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Right: title + text */}
             <div className="space-y-4">
               <h2
                 id="about-team-title"
                 className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl"
               >
-                &quot;Луис кееполи Монголиа” ХХК-ийн товч танилцуулга
+                {t("about.team.title")}
               </h2>
               <p className="text-sm leading-relaxed text-foreground/80">
-                “Луис кееполи Монголиа” ХХК (цаашид “Манай компани” гэх) нь Өвөр
-                Монголын ”Луис кееполи туршилт, технологи” ХХК-ийн 100% хөрөнгө
-                оруулалттай, Өвөр Монголын анхны хил дамнасан шинжилгээний эрх
-                бүхий байгууллага бөгөөд 2024 оны 5 дугаар сарын 10-ны өдөр
-                Монгол Улсад албан ёсоор бүртгэгдэн байгуулагдсан. Лабораторийн
-                нийт хөрөнгө оруулалт 670,000 ам.доллар. 2024 оны 6 дугаар
-                сараас эхлэн Улаанбаатар хот, Хан-Уул дүүргийн 22-р хороо, Ар
-                Зайсангийн 92 дугаар байрны гурван давхар барилгад үйл
-                ажиллагаага явуулж эхэлсэн. Нийт 510 м² талбайтай уг барилгын
-                340 м²-ийг лабораторийн зориулалтаар, 170 м²-ийг оффисын
-                зориулалтаар тохижуулж, Монгол Улсын холбогдох хууль, дүрэм,
-                журмын дагуу олон улсын стандартын шаардлагад нийцсэн жишиг
-                лаборатори болгон байгуулсан
+                {t("about.team.paragraph1")}
               </p>
               <p className="text-sm leading-relaxed text-foreground/80">
-                Манай компани нь “Сорилтын болон шалгалт тохируулгын
-                лабораторийн чадавхад тавих ерөнхий шаардлага&quot; MNS ISO/IEC
-                17025 стандартын шаардлагыг хангасан сорилтын лаборатори,
-                &quot;Тохирлын үнэлгээ. Хяналтын ажил эрхэлдэг төрөл бүрийн
-                байгууллагын үйл ажиллагаанд тавих шаардлага&quot; MNS ISO/IEC
-                17020 стандартын шаардлагыг ханган техникийн хяналтын чиглэлээр
-                тус тус үйл ажиллагаа явуулж байна.
+                {t("about.team.paragraph2")}
               </p>
             </div>
           </div>
 
-          {/* Extra bottom text under team block (full width) */}
           <p className="text-sm leading-relaxed text-foreground/80">
-            Манай байгууллага нь Монгол Улсаас БНХАУ руу экспортолж байгаа
-            нүүрсний ачилт, буулгалт, жин тоон хэмжээний болон чанарын техникийн
-            хяналт болон сорилтын лабораторийн шинжилгээг хийж, хил дамнасан
-            нүүрсний худалдааг хөнгөвчлөхөд өөрийн хувь нэмрээ оруулан ажиллаж
-            байна.
-          </p>
-          <p className="text-sm leading-relaxed text-foreground/80">
-            <b>Эрхэм зорилго</b> <br /> Нүүрсний чанарыг үнэн зөв, хараат бус,
-            мэргэжлийн түвшинд тодорхойлж, уул уурхайн салбарын тогтвортой
-            хөгжилд хувь нэмэр оруулах.
-          </p>
-          <p>
-            <b>Алсын хараа</b> <br />
-            Бүс нутгийн хэмжээнд өрсөлдөх чадвартай, олон улсын стандартын
-            шаардлагад бүрэн нийцсэн нүүрсний шинжилгээний тэргүүлэх лаборатори
-            болох. Компанийн удирдлага, гүйцэтгэх баг нь уул уурхайн салбар
-            болон тохирлын үнэлгээний чиглэлээр 5–25 жилийн ажлын туршлагатай,
-            БНХАУ болон Монгол Улсын лабораториудад ажиллаж байсан туршлагатай,
-            дотоод болон олон улсын сургалтад хамрагдсан мэргэжлийн
-            ажилтануудаас бүрдсэн. Лаборатори нь Хятадын “WILLSUI”, “SI-TIAN”,
-            “WEPER” фирмийн 35 ширхэг орчин үеийн нүүрсний шинжилгээний болон
-            туслах багаж, төхөөрөмжөөр тоноглогдсон. Лаборатори нь Монгол Улс
-            болон БНХАУ-ын холбогдох стандарт, нормын дагуу өдөрт 50–60 ширхэг
-            чулуун нүүрс, хүрэн нүүрс, коксжих нүүрсний дээжид дараах шинжилгээг
-            хийх хүчин чадалтай: • Техникийн шинжилгээ (үнслэг, чийг, дэгдэмхий
-            бодис, нийт хүхэр, илчлэг) • Элементийн шинжилгээ (нүүрстөрөгч,
-            устөрөгч) • Хорт элемент (хүнцэл, фосфор, фтор, хлор, мөнгөн ус)
-            2024 оны 12 дугаар сараас эхлэн манай компани “Тавантолгой” ХК болон
-            Дорноговь аймагт үйл ажиллагаа явуулдаг “Айл баян” ХХК, “Түмэн айл”
-            ХХК, Сангийн далай ХХК-иудын олборлосон коксжих болон хүрэн нүүрсний
-            дээжид туршилт, шинжилгээ хийж, мөн нүүрсний овоолгоос дээж авах,
-            ачих буулгах үеийн тоо хэмжээ, чанарын хяналт, баталгаажуулалтын
-            ажлыг гүйцэтгэж байна.
-          </p>
-          <p className="text-sm leading-relaxed text-foreground/80">
-            <b>Чанартай ажил </b> <br />
-            Бид таньд чанарын стандартад нийцсэн шинжилгээний үр дүнг олгоно.
-          </p>
-          <p className="text-sm leading-relaxed text-foreground/80">
-            <b>Бидний үнэт зүйлс</b> <br /> Нүүрсний чанарыг үнэн зөв, хараат
-            бус, мэргэжлийн түвшинд тодорхойлж, уул уурхайн салбарын тогтвортой
-            хөгжилд хувь нэмэр оруулах.
-          </p>
-          <p className="text-sm leading-relaxed text-foreground/80">
-            <b>Хэрэглэгч төвтэй үйлчилгээ</b> <br /> Бид үйлчлүүлэгчдийг том,
-            жижиг гэж ялгахгүйгээр хэрэглэгч бүрийн хэрэгцээнд нийцсэн уян хатан
-            үйлчилгээг санал болгоно. Бидний зорилго бол хэрэглэгч нартай удаан
-            хугацааны түншлэл тогтоох бөгөөд манай найрсаг, мэргэшсэн баг хэзээд
-            хэрэглэгчдэд үйлчлэхэд бэлэн байна
-          </p>
-          <p className="text-sm leading-relaxed text-foreground/80">
-            <b>Хэрэглэгчээ хүндэтгэх</b> <br /> Бид хүмүүс бидэнтэй хэрхэн
-            харьцахыг хүсдэг, тийм л байдлаар харьцахыг зорилгоо болгодог тул
-            хүндэтгэл бол бидний харилцааны үндэс суурь болдог.
+            {t("about.team.paragraph3")}
           </p>
 
           <p className="text-sm leading-relaxed text-foreground/80">
-            <b>Хариуцлага </b> <br /> Бид ажилдаа хариуцлагатай хандаж,
-            үйлчлүүлэгчдийнхээ сэтгэл ханамжийг өндөр байлгахыг зорьж ажилладаг.
-            Найдвартай, шударга түнш байхын тулд хийж байгаа бүх зүйлдээ ил тод
-            байхыг чухалчилдаг. Компанийн удирдлага, гүйцэтгэх баг нь уул
-            уурхайн салбар болон тохирлын үнэлгээний чиглэлээр 5–25 жилийн ажлын
-            туршлагатай, БНХАУ болон Монгол Улсын лабораториудад ажиллаж байсан
-            туршлагатай, дотоод болон олон улсын сургалтад хамрагдсан мэргэжлийн
-            ажилтануудаас бүрдсэн.
+            <b>{t("about.mission.title")}</b> <br />
+            {t("about.mission.description")}
           </p>
-        </section>
 
-        {/* Organization chart */}
-        <section aria-labelledby="about-structure-title" className="space-y-6">
-          <div className="text-center space-y-1">
-            <h2
-              id="about-structure-title"
-              className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl"
-            >
-              &quot;“Луис кееполи Монголиа” &quot; ХХК
-            </h2>
-            <p className="text-sm font-medium text-foreground/80">
-              Байгууллагын бүтэц
-            </p>
-          </div>
+          <p className="text-sm leading-relaxed text-foreground/80">
+            <b>{t("about.vision.title")}</b> <br />
+            {t("about.vision.description")}
+          </p>
 
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-xl border border-border bg-background shadow-sm">
-            <div className="relative aspect-16/10 w-full">
-              <Image
-                src="/about-org-chart.png"
-                alt="Байгууллагын бүтэц"
-                fill
-                className="object-contain bg-white"
-                sizes="(max-width: 1024px) 100vw, 64rem"
-              />
-            </div>
-          </div>
+          <p className="text-sm leading-relaxed text-foreground/80">
+            <b>{t("about.quality.title")}</b> <br />
+            {t("about.quality.description")}
+          </p>
+
+          <p className="text-sm leading-relaxed text-foreground/80">
+            <b>{t("about.values.title")}</b> <br />
+            {t("about.values.description")}
+          </p>
+
+          <p className="text-sm leading-relaxed text-foreground/80">
+            <b>{t("about.customerService.title")}</b> <br />
+            {t("about.customerService.description")}
+          </p>
+
+          <p className="text-sm leading-relaxed text-foreground/80">
+            <b>{t("about.respect.title")}</b> <br />
+            {t("about.respect.description")}
+          </p>
+
+          <p className="text-sm leading-relaxed text-foreground/80">
+            <b>{t("about.responsibility.title")}</b> <br />
+            {t("about.responsibility.description")}
+          </p>
         </section>
       </div>
     </main>

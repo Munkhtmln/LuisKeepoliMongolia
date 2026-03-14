@@ -2,15 +2,18 @@
 
 import { ArrowUp, Mail, Phone } from "lucide-react";
 import Image from "next/image";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export default function Footer() {
+  const { t } = useLocale();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer>
-      {/* Main footer section */}
+      {/* Main footer */}
       <div className="bg-[#3044a8] text-white px-6 py-10 md:px-16 lg:px-24">
         <div className="mb-6">
           <Image
@@ -24,42 +27,41 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-bold text-white">
-            {'"Luis Keepoli Mongolia" ХХК'}
+            {t("footer.company")}
           </h3>
-          <p className="text-sm leading-relaxed text-white/90 max-w-lg">
-            {"Монгол улс, Улаанбаатар хот, Хан-Уул дүүрэг 22-р"}
+
+          <p className="max-w-lg text-sm leading-relaxed text-white/90">
+            {t("footer.addressLine1")}
             <br />
-            {"хороо,Зайсангийн ам."}
+            {t("footer.addressLine2")}
           </p>
-          <p className="text-sm text-white/90 flex items-center gap-2">
+
+          <p className="flex items-center gap-2 text-sm text-white/90">
             <Phone className="h-4 w-4" />
-            {"Утас: 91915176, 99080016"}
+            {t("footer.phoneLabel")}: {t("footer.phone")}
           </p>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="bg-[#263280] text-white px-6 py-4 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs text-white/80">
-          {
-            'Copyright ©2026 "Luis Keepoli Mongolia" ХХК, Бүх эрх хуулиар хамгаалагдсан.'
-          }
-        </p>
+      <div className="flex flex-col items-center justify-between gap-4 bg-[#263280] px-6 py-4 text-white md:flex-row md:px-16 lg:px-24">
+        <p className="text-xs text-white/80">{t("footer.copyright")}</p>
 
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href={`mailto:${t("footer.email")}`}
               aria-label="Email"
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 transition-colors hover:text-white"
             >
               <Mail className="h-6 w-6" />
             </a>
           </div>
+
           <button
             onClick={scrollToTop}
-            aria-label="Scroll to top"
-            className="bg-white/20 hover:bg-white/30 transition-colors rounded p-2"
+            aria-label={t("footer.scrollTop")}
+            className="rounded bg-white/20 p-2 transition-colors hover:bg-white/30"
           >
             <ArrowUp className="h-5 w-5 text-white" />
           </button>

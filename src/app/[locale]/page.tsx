@@ -2,7 +2,6 @@
 
 import Body from "../_components/Body";
 import ServicesSection from "../_components/ServiceSection";
-import Bracket from "../_components/Bracket";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ArticleSection from "../_components/Article-Section";
@@ -51,13 +50,14 @@ export default function Home() {
             {slides.map((slide, index) => (
               <div
                 key={slide.src}
-                className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
                 aria-hidden={index !== currentSlide}
               >
                 <Image
                   src={slide.src}
-                  alt={slide.title} 
+                  alt={slide.title}
                   fill
                   className="object-cover rounded-2xl"
                   priority={index === 0}
@@ -73,17 +73,18 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${index === currentSlide
-                ? "scale-110 bg-foreground"
-                : "bg-foreground/50 hover:bg-foreground/75"
-                }`}
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "scale-110 bg-foreground"
+                  : "bg-foreground/50 hover:bg-foreground/75"
+              }`}
               aria-label={`Слайд ${index + 1}-рүү очих`}
               aria-current={index === currentSlide ? "true" : undefined}
             />
           ))}
 
           {/* Modern Progress Navigation */}
-          <div className="absolute bottom-8 right-8 z-20 flex items-center gap-3 bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10">
+          <div className="absolute bottom-8 right-2 z-120 flex items-center gap-3 bg-black/20 backdrop-blur-md p-3 rounded-2xl border border-white/10">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -91,10 +92,11 @@ export default function Home() {
                 className="group relative h-1.5 w-12 overflow-hidden rounded-full bg-white/20 transition-all"
               >
                 <div
-                  className={`absolute inset-0 h-full bg-blue-500 transition-all ${index === currentSlide
+                  className={`absolute inset-0 h-full bg-blue-500 transition-all ${
+                    index === currentSlide
                       ? "translate-x-0"
                       : "-translate-x-full"
-                    }`}
+                  }`}
                   style={{
                     transitionDuration:
                       index === currentSlide ? "6000ms" : "0ms",

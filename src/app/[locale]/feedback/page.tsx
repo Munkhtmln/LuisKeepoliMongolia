@@ -1,17 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const FEEDBACK_EMAIL = "complaints@example.com";
 
 export default function FeedbackPage() {
+  const { t } = useLocale();
   const [, setStatus] = useState<"idle" | "opening" | "error">("idle");
   const [error, setError] = useState("");
 
   const handleClick = (e: { preventDefault: () => void }) => {
-    e.preventDefault(); // stop form submit
-    setError("Одоогоор санал гомдол хүлээн авах боломжгүй байна");
+    e.preventDefault();
+    setError(t("feedbackPage.form.unavailable"));
   };
+
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -19,8 +22,9 @@ export default function FeedbackPage() {
 
     const applicantType =
       data.get("applicantType") === "legal"
-        ? "Өргөдөл хуулийн этгээд"
-        : "Өргөдөл иргэн";
+        ? t("feedbackPage.form.applicantType.legal")
+        : t("feedbackPage.form.applicantType.citizen");
+
     const fullName = (data.get("fullName") as string)?.trim() || "";
     const emailVal = (data.get("email") as string)?.trim() || "";
     const phone = (data.get("phone") as string)?.trim() || "";
@@ -29,20 +33,21 @@ export default function FeedbackPage() {
     const date = (data.get("date") as string)?.trim() || "";
 
     const body = [
-      `Өргөдөл илгээх төрөл: ${applicantType}`,
-      `Өргөдөл гаргагчийн овог нэр: ${fullName}`,
-      `Цахим шуудан: ${emailVal}`,
-      `Утасны дугаар: ${phone}`,
-      `Өргөдлийн товч утга: ${subject}`,
-      `Өргөдөл гаргасан огноо: ${date}`,
+      `${t("feedbackPage.mail.labels.type")}: ${applicantType}`,
+      `${t("feedbackPage.mail.labels.fullName")}: ${fullName}`,
+      `${t("feedbackPage.mail.labels.email")}: ${emailVal}`,
+      `${t("feedbackPage.mail.labels.phone")}: ${phone}`,
+      `${t("feedbackPage.mail.labels.subject")}: ${subject}`,
+      `${t("feedbackPage.mail.labels.date")}: ${date}`,
       "",
-      "Өргөдлийн агуулга:",
+      `${t("feedbackPage.mail.labels.content")}:`,
       content,
     ].join("\n");
 
     const mailto = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(
-      subject || "Өргөдөл / Гомдол"
+      subject || t("feedbackPage.mail.defaultSubject")
     )}&body=${encodeURIComponent(body)}`;
+
     setStatus("opening");
     try {
       window.location.href = mailto;
@@ -53,56 +58,44 @@ export default function FeedbackPage() {
   }
 
   return (
-    <main className="bg-muted/40 py-16 h-full flex-1">
+    <main className="flex-1 h-full bg-muted/40 py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
-          {/* Left: instructions */}
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
           <section>
             <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              САНАЛ, ӨРГӨДӨЛ, ГОМДОЛ ХҮЛЭЭН АВАХ
+              {t("feedbackPage.hero.title")}
             </h1>
+
             <p className="mt-6 text-base leading-relaxed text-foreground/80">
-              &quot;Луис кееполи Монголиа&quot; ХХК‑ийн лабораторийн үйл
-              ажиллагаа болон лабораторийн сорил шинжилгээний ажлын чанар, бусад
-              асуудлаар лабораторийн удирдлага, албаны тушаалтанд хандаж гаргах
-              санал, хүсэлт, гомдол, өргөдлийг хүлээн авч шийдвэрлэхэд
-              зориулагдана.
+              {t("feedbackPage.hero.description")}
             </p>
 
             <h2 className="mt-8 text-base font-semibold text-foreground">
-              Өргөдөл, гомдол тавих шаардлага
+              {t("feedbackPage.requirements.title")}
             </h2>
+
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foreground/80">
-              <li>
-                Иргэн өргөдөл, гомдолд гардаж өгч буй, эсхүл цахим шуудангийн
-                хаяг, утасны дугаараа тодорхой бичиж, гарын үсэг зурна.
-              </li>
-              <li>
-                Өргөдөл, гомдолд дурдсан асуудал бодит, баримтад үндэслэгдсэн,
-                баримт бичгийг хавсаргасан байх нь зүйтэй.
-              </li>
-              <li>Өргөдөл, гомдлыг ил тодорхой, гаргацтай бичсэн байна.</li>
+              <li>{t("feedbackPage.requirements.items.0")}</li>
+              <li>{t("feedbackPage.requirements.items.1")}</li>
+              <li>{t("feedbackPage.requirements.items.2")}</li>
             </ul>
 
             <h2 className="mt-8 text-base font-semibold text-foreground">
-              Өргөдөл, гомдлыг шийдвэрлэх, хариу өгөх хугацаа
+              {t("feedbackPage.response.title")}
             </h2>
+
             <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-              Санал гомдлыг хуулийн хугацаанд буюу 30 хоногт багтаан
-              шийдвэрлэнэ. Зайлшгүй тохиолдолд 15 хоногоор нэг удаа сунгаж болох
-              ба сунгасан тухай өргөдөл гаргагчид мэдэгдэнэ. Аливаа санал
-              гомдлыг орж ирсэн өдрөөс эхлэн бүртгэн авч архивын сан хөмрөгт
-              хамгийн багадаа 3 жилийн хугацаанд хадгална.
+              {t("feedbackPage.response.description")}
             </p>
           </section>
 
-          {/* Right: form */}
+          {/* Form хувилбар хэрэглэх бол энэ хэсгийн comment-ийг буцааж авч болно */}
           {/* <section>
             <div className="rounded-xl bg-background shadow-sm ring-1 ring-border">
               <form className="space-y-6 p-6 sm:p-8" onSubmit={handleSubmit}>
                 <div>
                   <p className="text-sm font-medium text-foreground">
-                    Өргөдөл илгээх төрөл
+                    {t("feedbackPage.form.typeLabel")}
                   </p>
                   <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-6">
                     <label className="inline-flex items-center gap-2 text-sm text-foreground">
@@ -113,7 +106,7 @@ export default function FeedbackPage() {
                         defaultChecked
                         className="h-4 w-4 border-border text-primary focus:ring-primary"
                       />
-                      <span>Өргөдөл иргэн</span>
+                      <span>{t("feedbackPage.form.applicantType.citizen")}</span>
                     </label>
                     <label className="inline-flex items-center gap-2 text-sm text-foreground">
                       <input
@@ -122,7 +115,7 @@ export default function FeedbackPage() {
                         value="legal"
                         className="h-4 w-4 border-border text-primary focus:ring-primary"
                       />
-                      <span>Өргөдөл хуулийн этгээд</span>
+                      <span>{t("feedbackPage.form.applicantType.legal")}</span>
                     </label>
                   </div>
                 </div>
@@ -133,7 +126,7 @@ export default function FeedbackPage() {
                       htmlFor="fullName"
                       className="block text-sm font-medium text-foreground"
                     >
-                      Өргөдөл гаргагчийн овог нэр
+                      {t("feedbackPage.form.fields.fullName")}
                     </label>
                     <textarea
                       id="fullName"
@@ -150,7 +143,7 @@ export default function FeedbackPage() {
                         htmlFor="email"
                         className="block text-sm font-medium text-foreground"
                       >
-                        Цахим шуудан
+                        {t("feedbackPage.form.fields.email")}
                       </label>
                       <input
                         type="email"
@@ -160,12 +153,13 @@ export default function FeedbackPage() {
                         required
                       />
                     </div>
+
                     <div className="space-y-1.5">
                       <label
                         htmlFor="phone"
                         className="block text-sm font-medium text-foreground"
                       >
-                        Утасны дугаар
+                        {t("feedbackPage.form.fields.phone")}
                       </label>
                       <input
                         type="tel"
@@ -182,7 +176,7 @@ export default function FeedbackPage() {
                       htmlFor="subject"
                       className="block text-sm font-medium text-foreground"
                     >
-                      Өргөдлийн товч утга
+                      {t("feedbackPage.form.fields.subject")}
                     </label>
                     <input
                       type="text"
@@ -198,7 +192,7 @@ export default function FeedbackPage() {
                       htmlFor="content"
                       className="block text-sm font-medium text-foreground"
                     >
-                      Өргөдлийн агуулга
+                      {t("feedbackPage.form.fields.content")}
                     </label>
                     <textarea
                       id="content"
@@ -214,7 +208,7 @@ export default function FeedbackPage() {
                       htmlFor="date"
                       className="block text-sm font-medium text-foreground"
                     >
-                      Өргөдөл гаргасан огноо
+                      {t("feedbackPage.form.fields.date")}
                     </label>
                     <input
                       type="date"
@@ -232,7 +226,7 @@ export default function FeedbackPage() {
                     onClick={handleClick}
                     className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
-                    Өргөдөл илгээх
+                    {t("feedbackPage.form.submit")}
                   </button>
 
                   {error && (
@@ -242,15 +236,18 @@ export default function FeedbackPage() {
               </form>
             </div>
           </section> */}
+
           <section className="flex items-center justify-center">
             <div className="text-center">
-              <h2 className="text-xl font-semibold">Contact us</h2>
+              <h2 className="text-xl font-semibold">
+                {t("feedbackPage.contact.title")}
+              </h2>
 
               <a
                 href="mailto:example@gmail.com"
                 className="mt-2 block text-primary underline hover:text-primary/80"
               >
-                Luiskeepoli0510@gmail.com
+                {t("feedbackPage.contact.email")}
               </a>
             </div>
           </section>

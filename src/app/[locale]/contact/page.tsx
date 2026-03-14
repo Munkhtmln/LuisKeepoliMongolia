@@ -1,17 +1,24 @@
 "use client";
 
+import { useLocale } from "@/i18n/LocaleProvider";
+
 export default function ContactPage() {
+  const { t } = useLocale();
+
   return (
-    <main className="bg-background py-12 sm:py-16 h-full">
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
+    <main className="h-full bg-background py-12 sm:py-16">
+      <section className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
         <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl">
-          &quot;Луис кееполи Монголиа&quot; ХХК
+          {t("contactPage.company")}
         </h1>
-        <p className="mt-4 text-sm sm:text-base text-foreground/80">
-          Монгол Улс, Улаанбаатар хот, Хан-Уул дүүрэг, 22-р хороо,Зайсангийн ам.
+
+        <p className="mt-4 text-sm text-foreground/80 sm:text-base">
+          {t("contactPage.address")}
         </p>
-        <p className="mt-1 text-sm sm:text-base text-foreground/80">
-          Утас: 91915176, 99080016 | И-мэйл: Luiskeepoli0510@gmail.com
+
+        <p className="mt-1 text-sm text-foreground/80 sm:text-base">
+          {t("contactPage.phoneLabel")}: {t("contactPage.phone")} |{" "}
+          {t("contactPage.emailLabel")}: {t("contactPage.email")}
         </p>
 
         <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-muted/40">
@@ -21,7 +28,7 @@ export default function ContactPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0 h-full w-full border-0"
-              aria-label="Байршлын газрын зураг"
+              aria-label={t("contactPage.mapAria")}
             />
           </div>
         </div>

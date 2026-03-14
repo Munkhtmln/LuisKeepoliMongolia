@@ -88,7 +88,9 @@ export default function Header() {
               {navKeys.map((item) => (
                 <Link
                   key={item.key}
-                  href={item.path === "" ? `/${locale}` : `/${locale}${item.path}`}
+                  href={
+                    item.path === "" ? `/${locale}` : `/${locale}${item.path}`
+                  }
                   className="min-w-0 wrap-break-word px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
                 >
                   {t(item.key)}
@@ -105,7 +107,9 @@ export default function Header() {
                 <button
                   className="inline-flex size-10 items-center justify-center rounded-md text-foreground transition-colors hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   aria-label={
-                    mobileSheetOpen ? t("sidebar.closeMenu") : t("sidebar.openMenu")
+                    mobileSheetOpen
+                      ? t("sidebar.closeMenu")
+                      : t("sidebar.openMenu")
                   }
                   aria-expanded={mobileSheetOpen}
                 >
@@ -126,7 +130,11 @@ export default function Header() {
                   {navKeys.map((item) => (
                     <Link
                       key={item.key}
-                      href={item.path === "" ? `/${locale}` : `/${locale}${item.path}`}
+                      href={
+                        item.path === ""
+                          ? `/${locale}`
+                          : `/${locale}${item.path}`
+                      }
                       onClick={() => setMobileSheetOpen(false)}
                       className="min-w-0 wrap-break-word rounded-lg px-3 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:bg-black/5 hover:text-primary"
                     >

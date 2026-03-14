@@ -1,5 +1,5 @@
-import { NewsCard } from "./NewsCard";
 import { newsItems } from "@/lib/newsData";
+import { NewsCard } from "./NewsCard";
 
 interface NewsSectionProps {
   /** Set to false when used on the news page (page has its own title). Default true for homepage. */

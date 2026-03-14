@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FlaskConical, Truck, FileCheck } from "lucide-react";
+import { FlaskConical, Truck } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 const services = [

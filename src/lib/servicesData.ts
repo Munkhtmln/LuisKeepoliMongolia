@@ -1,17 +1,15 @@
 export interface ServiceSection {
-  heading: string;
-  paragraphs: string[];
+  headingKey: string;
+  paragraphKeys: string[];
 }
 
 export interface ServiceItem {
   slug: string;
   image: string;
-  title: string;
-  description: string;
-  /** Page title shown on slug page (e.g. "ТЕХНИКИЙН ХЯНАЛТЫН АЛБА") */
-  pageTitle: string;
-  /** Intro paragraph next to the image */
-  intro: string;
+  titleKey: string;
+  descriptionKey: string;
+  pageTitleKey: string;
+  introKey: string;
   sections: ServiceSection[];
 }
 
@@ -19,23 +17,19 @@ export const services: ServiceItem[] = [
   {
     slug: "tehnikiin-hyanaltyn-alba",
     image: "/nvvrs-deej.png",
-    title: "Техникийн хяналтын алба",
-    description:
-      "Техникийн хяналтын албаны  ажилтнууд нь СХЗГазар болон Монгол Улсын Шинжлэх ухаан, технологийн их сургуулиас 2019-2025 онуудад зохион .....",
-    pageTitle: "ТЕХНИКИЙН ХЯНАЛТЫН АЛБА",
-    intro:
-      'Техникийн хяналтын албаны  ажилтнууд нь СХЗГазар болон Монгол Улсын Шинжлэх ухаан, технологийн их сургуулиас 2019-2025 онуудад зохион байгуулагдсан сургалтуудад хамрагдаж мэргэшсэн бөгөөд 2025 оны 1-р сараас Дорноговь аймгийн нутагт үйл ажиллагаагаа явуулдаг "Айл баян"ХХК, "Түмэн айл" ХХК-ий уурхайн болон Ханги хилийн боомт дахь гаалийн хяналтын талбай дахь нүүрсний овоолгоос дээж авах, бэлтгэх,  ачилт,  буулгалтын үеийн чанарын болон тоо, хэмжээний хяналт хийх ажлыг гүйцэтгэж байна.Нүүрсний дээж авалт, чанарын шалгалтууд нь уурхайн үйлдвэрлэлийн хугацаанд тогтмол хийгдэж, бүтээгдэхүүний чанартай байх үндэс болдог.Тус компаний Техникийн хяналтын алба нь "Тохирлын үнэлгээ. Хяналтын ажил эрхэлдэг төрөл бүрийн байгууллагын үйл ажиллагаанд тавих шаардлага"  MNS ISO/IEC 17020 стандартын дагуу Монгол Улсын Үндэсний Итгэмжлэлийн Төвийн даргын 2025 оны 09-р сарын 03-ны өдрийн А/204 тоот тушаалаар итгэмжлэгдэн техникийн хяналтын чиглэлээр  үйл ажиллагаа явуулж байна.',
+    titleKey: "services.items.inspection.title",
+    descriptionKey: "services.items.inspection.description",
+    pageTitleKey: "services.items.inspection.pageTitle",
+    introKey: "services.items.inspection.intro",
     sections: [],
   },
   {
     slug: "Nuursnii-sorilt-shinzhilgeenii-laboratoriin",
     image: "/lab.png",
-    title: "Нүүрсний сорилт шинжилгээний лаборатори",
-    description:
-      "Нүүрсний сорилт, шинжилгээний лаборатори нь MNS ISO/IEC 17025:2018 стандартын шаардлага хангасан ....",
-    pageTitle: "ЛАБОРАТОРИЙН АЛБА",
-    intro:
-      "Нүүрсний сорилт, шинжилгээний лаборатори нь MNS ISO/IEC 17025:2018 стандартын шаардлага хангасан тул Монгол Улсын Үндэсний Итгэмжлэлийн Төвийн даргын 2025 оны 09-р сарын 03-ны өдрийн А/204 тоот тушаалын 1 дүгээр хавсралтаар итгэмжлэгдэн үйл ажиллагаа явуулж  байна",
+    titleKey: "services.items.laboratory.title",
+    descriptionKey: "services.items.laboratory.description",
+    pageTitleKey: "services.items.laboratory.pageTitle",
+    introKey: "services.items.laboratory.intro",
     sections: [],
   },
 ];
