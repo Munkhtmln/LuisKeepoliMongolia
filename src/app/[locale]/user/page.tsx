@@ -49,7 +49,7 @@ export default function NewsPage() {
 
         <div className="relative order-1 aspect-[4/3] w-full shrink-0 overflow-hidden rounded-lg bg-muted md:order-2 md:w-[42%] md:min-w-[320px]">
           <Image
-            src="/nvvrsjinshin.JPG"
+            src="/nuursjinshin.png"
             alt={t("userPage.coalIntro.imageAlt")}
             fill
             className="object-cover"
