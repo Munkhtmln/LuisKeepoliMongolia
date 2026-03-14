@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import NewsSection from "../_components/News-Section";
+import NewsSection from "../../_components/News-Section";
 
 export default function NewsPage() {
   return (

@@ -1,4 +1,8 @@
+"use client";
+
+import Link from "next/link";
 import { FlaskConical, Truck, FileCheck } from "lucide-react";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const services = [
   {
@@ -18,6 +22,7 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const { locale } = useLocale();
   return (
     <section className="bg-muted/40 py-16 px-6 lg:px-20">
       <div className="mx-auto max-w-6xl">
@@ -44,12 +49,12 @@ export default function ServicesSection() {
               <p className="mt-3 flex-1 text-sm text-muted-foreground leading-relaxed text-justify">
                 {service.description}
               </p>
-              <a
-                href={`/services`}
+              <Link
+                href={`/${locale}/services`}
                 className="mt-6 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
               >
                 Дэлгэрэнгүй
-              </a>
+              </Link>
             </div>
           ))}
         </div>

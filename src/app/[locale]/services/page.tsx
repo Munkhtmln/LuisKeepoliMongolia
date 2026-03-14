@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "./servicesData";
+import { useParams } from "next/navigation";
+import { services } from "@/lib/servicesData";
 
 export default function ServicesPage() {
+  const params = useParams();
+  const locale = (params?.locale as string) ?? "mn";
   return (
     <main className="bg-muted/40 py-16 h-full">
       <div className="mx-auto max-w-screen px-4 sm:px-6 lg:px-8">
@@ -40,7 +43,7 @@ export default function ServicesPage() {
                     </p>
                     <div className="mt-4 flex justify-center">
                       <Link
-                        href={`/services/${service.slug}`}
+                        href={`/${locale}/services/${service.slug}`}
                         className="text-sm font-semibold text-blue-700 underline decoration-blue-700/70 underline-offset-4 hover:text-blue-900"
                       >
                         Дэлгэрэнгүй

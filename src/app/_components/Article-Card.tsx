@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 interface ArticleCardProps {
   image: string;
@@ -14,6 +17,7 @@ export function ArticleCard({
   description,
   slug,
 }: ArticleCardProps) {
+  const { locale } = useLocale();
   return (
     <article className="flex h-50 bg-card rounded-lg  mt-10 border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative w-30/100 aspect-[26/10] overflow-hidden">
@@ -28,7 +32,7 @@ export function ArticleCard({
         </p>
         <div className="flex justify-center">
           <Link
-            href={`/user/${slug}`}
+            href={`/${locale}/user/${slug}`}
             className="px-6 py-2 border border-foreground text-foreground text-xs font-medium rounded-sm hover:bg-foreground hover:text-background transition-colors cursor-pointer"
           >
             Дэлгэрэнгүй

@@ -14,17 +14,20 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const navItems = [
-  { label: "НҮҮР ХУУДАС", href: "/" },
-  { label: "БИДНИЙ ТУХАЙ", href: "/about" },
-  { label: "ХЭРЭГЛЭГЧИЙН БУЛАН", href: "/user" },
-  { label: "ҮЙЛЧИЛГЭЭ", href: "/services" },
-  { label: "ГОМДОЛ САНАЛ", href: "/feedback" },
-  { label: "ХОЛБОО БАРИХ", href: "/contact" },
-];
+const navKeys = [
+  { key: "nav.home", path: "" },
+  { key: "nav.about", path: "/about" },
+  { key: "nav.user", path: "/user" },
+  { key: "nav.services", path: "/services" },
+  { key: "nav.feedback", path: "/feedback" },
+  { key: "nav.contact", path: "/contact" },
+] as const;
 
 export default function Header() {
+  const { locale, t } = useLocale();
   const [scrollY, setScrollY] = useState(0);
   const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
 
@@ -53,13 +56,18 @@ export default function Header() {
       }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center  gap-50 lg:h-20">
+        <div
+          className={cn(
+            "flex h-16 min-w-0 items-center gap-4 lg:h-20",
+            locale === "zh" && "justify-between"
+          )}
+        >
           {/* Logo - overflowing (visible overflow, no shrink) */}
           <div className="relative flex shrink-0 overflow-visible">
             <Link
-              href="/"
+              href={`/${locale}`}
               className="flex items-center overflow-visible"
-              aria-label="LKM - Нүүр хуудас"
+              aria-label={t("header.logoAria")}
             >
               <Image
                 src="/logo.jpg"
@@ -71,21 +79,24 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav
-            className="hidden items-center gap-1 lg:flex"
-            aria-label="Үндсэн цэс"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="flex items-center gap-0.5 px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Desktop Navigation + Language switcher */}
+          <div className="hidden min-w-0 shrink items-center gap-4 lg:flex">
+            <nav
+              className="flex min-w-0 shrink items-center gap-1"
+              aria-label={t("header.mainNav")}
+            >
+              {navKeys.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.path === "" ? `/${locale}` : `/${locale}${item.path}`}
+                  className="min-w-0 wrap-break-word px-3 py-2 text-sm font-bold tracking-wide text-foreground transition-colors hover:text-primary"
+                >
+                  {t(item.key)}
+                </Link>
+              ))}
+            </nav>
+            <LanguageSwitcher />
+          </div>
 
           {/* Mobile: Sheet trigger */}
           <div className="flex items-center lg:hidden">
@@ -93,7 +104,9 @@ export default function Header() {
               <SheetTrigger asChild>
                 <button
                   className="inline-flex size-10 items-center justify-center rounded-md text-foreground transition-colors hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  aria-label={mobileSheetOpen ? "Цэс хаах" : "Цэс нээх"}
+                  aria-label={
+                    mobileSheetOpen ? t("sidebar.closeMenu") : t("sidebar.openMenu")
+                  }
                   aria-expanded={mobileSheetOpen}
                 >
                   <Menu className="size-6" />
@@ -104,29 +117,37 @@ export default function Header() {
                 className="w-full max-w-3xs border-l bg-white/95 backdrop-blur-md sm:max-w-sm"
               >
                 <SheetHeader className="sr-only">
-                  <SheetTitle>Цэс</SheetTitle>
+                  <SheetTitle>{t("sidebar.menu")}</SheetTitle>
                 </SheetHeader>
                 <nav
-                  className="flex flex-col gap-1 pt-6"
-                  aria-label="Мобайл цэс"
+                  className="flex min-w-0 flex-col gap-1 pt-6"
+                  aria-label={t("sidebar.mobileNav")}
                 >
-                  {navItems.map((item) => (
+                  {navKeys.map((item) => (
                     <Link
-                      key={item.label}
-                      href={item.href}
+                      key={item.key}
+                      href={item.path === "" ? `/${locale}` : `/${locale}${item.path}`}
                       onClick={() => setMobileSheetOpen(false)}
-                      className="rounded-lg px-3 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:bg-black/5 hover:text-primary"
+                      className="min-w-0 wrap-break-word rounded-lg px-3 py-3 text-sm font-bold tracking-wide text-foreground transition-colors hover:bg-black/5 hover:text-primary"
                     >
-                      {item.label}
+                      {t(item.key)}
                     </Link>
                   ))}
-                </nav>{" "}
+                </nav>
+                {/* Same language switcher as desktop (oval + dropdown) */}
+                <div className="mt-6 border-t border-black/10 pt-4">
+                  <LanguageSwitcher
+                    onAfterSelect={() => setMobileSheetOpen(false)}
+                    className="w-full justify-center"
+                  />
+                </div>
                 <SheetClose asChild>
                   <Button
                     variant="outline"
                     className="border-0 bg-transparent hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring absolute top-4 right-4"
+                    aria-label={t("sidebar.close")}
                   >
-                    X
+                    {t("sidebar.close")}
                   </Button>
                 </SheetClose>
               </SheetContent>

@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "НҮҮР ХУУДАС",
+    "about": "БИДНИЙ ТУХАЙ",
+    "user": "ХЭРЭГЛЭГЧИЙН БУЛАН",
+    "services": "ҮЙЛЧИЛГЭЭ",
+    "feedback": "ГОМДОЛ САНАЛ",
+    "contact": "ХОЛБОО БАРИХ"
+  },
+  "sidebar": {
+    "menu": "Цэс",
+    "openMenu": "Цэс нээх",
+    "closeMenu": "Цэс хаах",
+    "close": "Хаах",
+    "mobileNav": "Мобайл цэс"
+  },
+  "header": {
+    "mainNav": "Үндсэн цэс",
+    "logoAria": "LKM - Нүүр хуудас"
+  },
+  "lang": {
+    "mongolian": "Монгол",
+    "chinese": "Хятад",
+    "shortMn": "Mn",
+    "shortZh": "中文"
+  }
+}

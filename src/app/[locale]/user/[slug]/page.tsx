@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getNewsBySlug } from "../newsData";
+import { getNewsBySlug } from "@/lib/newsData";
 
 interface NewsDetailPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export default async function NewsDetailPage({ params }: NewsDetailPageProps) {

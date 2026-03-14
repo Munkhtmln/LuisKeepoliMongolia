@@ -1,5 +1,5 @@
 import { ArticleCard } from "./Article-Card";
-import { newsItems } from "../user/newsData";
+import { newsItems } from "@/lib/newsData";
 
 export default function ArticleSection() {
   return (

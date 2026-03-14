@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getServiceBySlug } from "../servicesData";
+import { getServiceBySlug } from "@/lib/servicesData";
 
 interface ServiceDetailPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export default async function ServiceDetailPage({

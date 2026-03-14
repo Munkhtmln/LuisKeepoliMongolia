@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export default function Body() {
+  const { locale } = useLocale();
   return (
     <section className="bg-muted/40 py-12 lg:py-20" aria-label="Танилцуулга">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -19,7 +23,7 @@ export default function Body() {
             </p>
             <div className="mt-8">
               <Link
-                href="/about"
+                href={`/${locale}/about`}
                 className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 Дэлгэрэнгүй

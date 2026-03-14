@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "user": "用户专区",
+    "services": "服务",
+    "feedback": "意见反馈",
+    "contact": "联系我们"
+  },
+  "sidebar": {
+    "menu": "菜单",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "close": "关闭",
+    "mobileNav": "移动菜单"
+  },
+  "header": {
+    "mainNav": "主菜单",
+    "logoAria": "LKM - 首页"
+  },
+  "lang": {
+    "mongolian": "蒙古文",
+    "chinese": "中文",
+    "shortMn": "Mn",
+    "shortZh": "中文"
+  }
+}

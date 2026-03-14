@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./_components/Footer";
-import Header from "./_components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,12 +16,6 @@ export const metadata: Metadata = {
   title: "Luis Keepoli Mongolia LLC",
   description: "",
 };
-export const metadata1 = {
-  title: "My App",
-  icons: {
-    icon: "/favicon.png",
-  },
-};
 
 export default function RootLayout({
   children,
@@ -31,13 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="mn">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header />
-        <main className="flex-1 h-full">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
