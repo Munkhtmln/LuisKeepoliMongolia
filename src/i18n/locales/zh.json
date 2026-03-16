@@ -79,6 +79,19 @@
     }
   },
   "userPage": {
+    "herotitle": "用户栏目",
+    "course": {
+      "title": "有关培训参与的信息",
+      "description": "实验室员工参加了由“Eco Best Chemistry”有限责任公司组织的培训，以提高员工处理化学品的能力，并提升技术检验人员的工作技能。"
+    },
+    "believement": {
+      "title": "证书",
+      "description": "蒙古国家认证中心负责人颁发了认证证书。"
+    },
+    "achievement": {
+      "title": "颁奖典礼",
+      "description": "“Lous Keepoli Mongolia” LLC 的董事 Ts. Tsogtgerel 在中国布加迪举行的“Lous Keepoli Testing and Technology” LLC 组织的 2025 年绩效评估仪式上被评为年度最佳员工。"
+    },
     "hero": {
       "title": "“资质证明及高级管理层声明”"
     },
@@ -132,6 +145,8 @@
     }
   },
   "services": {
+    "heroTitle": "我们的服务",
+    "heroDescription": "我们提供服务，满足工业供应链中每个环节的需求，致力于提供更可靠的服务。",
     "pageTitle": "\"Luis Keepoli Mongolia\" 有限责任公司提供两类服务。",
     "readMore": "更多",
     "notFound": {

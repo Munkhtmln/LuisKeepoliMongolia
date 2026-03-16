@@ -1,7 +1,9 @@
+import { useLocale } from "@/i18n/LocaleProvider";
 import { ArticleCard } from "./Article-Card";
 import { newsItems } from "@/lib/newsData";
 
 export default function ArticleSection() {
+  const { t } = useLocale();
   return (
     <section className="w-full bg-background">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -9,7 +11,7 @@ export default function ArticleSection() {
           {/* Left title area */}
           <div className="lg:w-60 shrink-0">
             <h2 className="text-2xl font-bold  text-foreground leading-tight">
-              {"Хэрэглэгчийн хэсэг"}
+              {t("userPage.herotitle")}
             </h2>
             <div className="mt-3 w-60 h-1 bg-muted-foreground/30" />
           </div>
@@ -20,8 +22,8 @@ export default function ArticleSection() {
               <ArticleCard
                 key={index}
                 image={item.image}
-                title={item.title}
-                description={item.description}
+                title={item.titleKey}
+                description={item.descriptionKey}
                 slug={item.slug}
               />
             ))}

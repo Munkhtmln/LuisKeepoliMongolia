@@ -5,6 +5,7 @@ import ServicesSection from "../_components/ServiceSection";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ArticleSection from "../_components/Article-Section";
+import IntroSplash from "../_components/Intro-splash";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -41,6 +42,7 @@ export default function Home() {
 
   return (
     <div className="">
+      <IntroSplash />
       <section
         className="relative w-full overflow-hidden"
         aria-label="Зургийн слайд"

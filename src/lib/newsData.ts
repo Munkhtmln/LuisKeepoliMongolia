@@ -1,31 +1,45 @@
+export interface NewsSection {
+  headingKey: string;
+  paragraphKeys: string[];
+}
+
 export interface NewsItem {
   slug: string;
   image: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
+  pageTitleKey: string;
+  introKey: string;
+  sections: NewsSection[];
 }
 
 export const newsItems: NewsItem[] = [
   {
     slug: "Medee-medeelel",
     image: "/surgalt.jpg",
-    title: "Сургалтанд хамрагдсан тухай мэдээлэл",
-    description:
-      'Лабораторийн ажилтанууд "Эко бест химистри" ХХК-ийн зохион байгуулсан химийн бодистой харьцах ажиллагсадыг чадавхижуулах, техникийн хяналтын ажилтануудын ажлын ур чадварыг дээшлүүлэх   сургалтанд тус тус хамрагдав. ',
+    titleKey: "userPage.course.title",
+    descriptionKey: "userPage.course.description",
+    pageTitleKey: "userPage.course.pageTitle",
+    introKey: "userPage.course.intro",
+    sections: [],
   },
   {
     slug: "itgemjlel",
     image: "/unnamed.jpg",
-    title: "Итгэмжлэл",
-    description:
-      "Монгол Улсын Үндэсний Итгэмжлэлийн Төвийн дарга итгэмжлэлийн гэрчилгээ гардуулав.",
+    titleKey: "userPage.believement.title",
+    descriptionKey: "userPage.believement.description",
+    pageTitleKey: "userPage.believement.pageTitle",
+    introKey: "userPage.believement.intro",
+    sections: [],
   },
   {
     slug: "Nuursnii-shinjilgeenii-tuhai",
     image: "/shagnal.jpg",
-    title: "Шагнал гардуулалт",
-    description:
-      'Хятад улсын Бугат хотод "Луис кееполи туршилт, технологи" ХХК -ийн зохион байгуулсан нийт ажилтануудын 2025 оны ажил дүгнэх ёслолын арга хэмжээнд оролцож "Луис кееполи Монголиа" ХХК-ийн захирал Ц.Цогтгэрэл оны тэргүүний ажилтанаар шалгарав.',
+    titleKey: "userPage.achievement.title",
+    descriptionKey: "userPage.achievement.description",
+    pageTitleKey: "userPage.achievement.pageTitle",
+    introKey: "userPage.achievement.intro",
+    sections: [],
   },
 ];
 

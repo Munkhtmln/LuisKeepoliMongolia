@@ -22,16 +22,16 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const { t } = useLocale();
   const { locale } = useLocale();
   return (
     <section className="bg-muted/40 py-16 px-6 lg:px-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl text-balance">
-          Бидний үйлчилгээ
+          {t("services.heroTitle")}
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-muted-foreground leading-relaxed">
-          Аж үйлдвэрийн гинжин хэлхээний холбоос бүрийн хэрэгцээнд тулгуурлан
-          үйлчилгээ үзүүлж, илүү найдвартай үйлчилгээг бий болгон ажиллаж байна.
+          {t("services.heroDescription")}
         </p>
 
         <div className="mt-14 grid grid-cols-1 justify-center gap-10 md:grid-cols-2">
@@ -44,16 +44,16 @@ export default function ServicesSection() {
                 />
               </div>
               <h3 className="mt-8 text-lg font-bold text-foreground">
-                {service.title}
+                {t("services.items.laboratory.title")}
               </h3>
               <p className="mt-3 flex-1 text-sm text-muted-foreground leading-relaxed text-justify">
-                {service.description}
+                {t("services.items.laboratory.description")}
               </p>
               <Link
                 href={`/${locale}/services`}
                 className="mt-6 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
               >
-                Дэлгэрэнгүй
+                {t("services.readMore")}
               </Link>
             </div>
           ))}

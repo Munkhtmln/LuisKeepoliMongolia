@@ -20,7 +20,10 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-function getNested(obj: Record<string, unknown>, path: string): string | undefined {
+function getNested(
+  obj: Record<string, unknown>,
+  path: string
+): string | undefined {
   const keys = path.split(".");
   let current: unknown = obj;
   for (const key of keys) {
@@ -35,7 +38,10 @@ type LocaleProviderProps = {
   initialLocale: Locale;
 };
 
-export function LocaleProvider({ children, initialLocale }: LocaleProviderProps) {
+export function LocaleProvider({
+  children,
+  initialLocale,
+}: LocaleProviderProps) {
   const [locale, setLocaleState] = useState<Locale>(initialLocale);
 
   useEffect(() => {
@@ -65,9 +71,7 @@ export function LocaleProvider({ children, initialLocale }: LocaleProviderProps)
   const value: LocaleContextValue = { locale, setLocale, t };
 
   return (
-    <LocaleContext.Provider value={value}>
-      {children}
-    </LocaleContext.Provider>
+    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
   );
 }
 

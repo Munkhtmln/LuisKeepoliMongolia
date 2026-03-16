@@ -1,5 +1,7 @@
+"use client";
 import { newsItems } from "@/lib/newsData";
 import { NewsCard } from "./NewsCard";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 interface NewsSectionProps {
   /** Set to false when used on the news page (page has its own title). Default true for homepage. */
@@ -7,6 +9,7 @@ interface NewsSectionProps {
 }
 
 export default function NewsSection({ showTitle = true }: NewsSectionProps) {
+  const { t } = useLocale();
   return (
     <section className="w-full bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -23,8 +26,8 @@ export default function NewsSection({ showTitle = true }: NewsSectionProps) {
             <NewsCard
               key={item.slug}
               image={item.image}
-              title={item.title}
-              description={item.description}
+              title={t(item.titleKey)}
+              description={t(item.descriptionKey)}
               slug={item.slug}
             />
           ))}
