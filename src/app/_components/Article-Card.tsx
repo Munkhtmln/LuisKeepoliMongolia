@@ -11,7 +11,7 @@ interface ArticleCardProps {
   slug: string;
 }
 
-export function ArticleCard({ image, slug }: ArticleCardProps) {
+export function ArticleCard({ image }: ArticleCardProps) {
   const { locale, t } = useLocale();
   return (
     <article className="flex h-50 bg-card rounded-lg  mt-10 border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">

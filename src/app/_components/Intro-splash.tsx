@@ -43,6 +43,7 @@ export default function IntroSplash() {
     >
       {/* LEFT text — travels from left:0 to beside logo */}
       <div
+        className="splash-text"
         style={{
           position: "absolute",
           top: "50%",
@@ -57,7 +58,7 @@ export default function IntroSplash() {
             color: "white",
             fontSize: 20,
             fontWeight: 600,
-            whiteSpace: "nowrap",
+            whiteSpace: "wrap",
             letterSpacing: "0.04em",
           }}
         >
@@ -89,6 +90,7 @@ export default function IntroSplash() {
 
       {/* RIGHT text — travels from right:0 to beside logo */}
       <div
+        className="splash-text"
         style={{
           position: "absolute",
           top: "50%",
@@ -103,7 +105,7 @@ export default function IntroSplash() {
             color: "white",
             fontSize: 20,
             fontWeight: 600,
-            whiteSpace: "nowrap",
+            whiteSpace: "wrap",
             letterSpacing: "0.04em",
           }}
         >
@@ -113,13 +115,14 @@ export default function IntroSplash() {
 
       {/* BOTTOM text — travels from bottom:0 to below logo */}
       <div
+        className="splash-text"
         style={{
           position: "absolute",
           left: "50%",
           transform: "translateX(-50%)",
           transition: `${transition.replace("all", "bottom")}, opacity 1s ease`,
           transitionDelay: "0.1s",
-          bottom: textPhase ? "calc(50% - 110px)" : 0,
+          bottom: textPhase ? "calc(45% - 110px)" : 0,
           opacity: textPhase ? 1 : 0.6,
         }}
       >
@@ -128,7 +131,7 @@ export default function IntroSplash() {
             color: "white",
             fontSize: 20,
             fontWeight: 600,
-            whiteSpace: "nowrap",
+            whiteSpace: "wrap",
             letterSpacing: "0.04em",
           }}
         >
@@ -154,6 +157,9 @@ export default function IntroSplash() {
         @keyframes splashProgress {
           from { width: 0% }
           to { width: 100% }
+        }
+        @media (max-width: 640px) {
+          .splash-text { display: none; }
         }
       `}</style>
     </div>
