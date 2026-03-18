@@ -16,7 +16,7 @@ export default function NewsSection({ showTitle = true }: NewsSectionProps) {
         {showTitle && (
           <div className="mb-10 md:mb-12">
             <h2 className="text-2xl font-bold text-foreground leading-tight">
-              Хэрэглэгчийн хэсэг
+              {t("userPage.herotitle")}
             </h2>
             <div className="mt-3 w-16 h-1 bg-muted-foreground/30" />
           </div>
