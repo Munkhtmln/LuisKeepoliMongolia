@@ -7,16 +7,12 @@ import { useLocale } from "@/i18n/LocaleProvider";
 const services = [
   {
     icon: FlaskConical,
-    title: "Нүүрсний сорилт шинжилгээний лаборатори",
-    description:
-      "Нүүрсний сорилт, шинжилгээний лаборатори нь MNS ISO/IEC 17025:2018 стандартын шаардлага хангасан тул Монгол Улсын Үндэсний Итгэмжлэлийн Төвийн даргын ...",
+    translationKey: "laboratory",
     slug: "coal-testing-laboratory",
   },
   {
     icon: Truck,
-    title: "Техникийн хяналтын алба",
-    description:
-      "Техникийн хяналтын албаны  ажилтнууд нь СХЗГазар болон Монгол Улсын Шинжлэх ухаан, технологийн их сургуулиас 2019-2025 онуудад зохион байгуулагдсан...",
+    translationKey: "inspection",
     slug: "technical-control-department",
   },
 ];
@@ -36,7 +32,7 @@ export default function ServicesSection() {
 
         <div className="mt-14 grid grid-cols-1 justify-center gap-10 md:grid-cols-2">
           {services.map((service) => (
-            <div key={service.title} className="flex flex-col items-center">
+            <div key={service.slug} className="flex flex-col items-center">
               <div className="flex justify-center md:justify-start">
                 <service.icon
                   className="h-20 w-20 text-foreground"
@@ -44,10 +40,10 @@ export default function ServicesSection() {
                 />
               </div>
               <h3 className="mt-8 text-lg font-bold text-foreground">
-                {t("services.items.laboratory.title")}
+                {t(`services.items.${service.translationKey}.title`)}
               </h3>
               <p className="mt-3 flex-1 text-sm text-muted-foreground leading-relaxed text-justify">
-                {t("services.items.laboratory.description")}
+                {t(`services.items.${service.translationKey}.description`)}
               </p>
               <Link
                 href={`/${locale}/services`}

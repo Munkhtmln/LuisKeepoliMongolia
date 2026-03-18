@@ -30,7 +30,7 @@ export function ArticleCard({ image }: ArticleCardProps) {
             href={`/${locale}/user`}
             className="px-6 py-2 border border-foreground text-foreground text-xs font-medium rounded-sm hover:bg-foreground hover:text-background transition-colors cursor-pointer"
           >
-            Дэлгэрэнгүй
+            {t("services.readMore")}
           </Link>
         </div>
       </div>
