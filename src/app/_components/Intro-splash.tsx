@@ -5,11 +5,17 @@ import Image from "next/image";
 
 export default function IntroSplash() {
   const [phase, setPhase] = useState<"enter" | "visible" | "exit" | "done">(
-    "enter"
+    "done"
   );
   const [textPhase, setTextPhase] = useState(false);
 
   useEffect(() => {
+    const hasPlayed = sessionStorage.getItem("splashPlayed");
+    if (hasPlayed) return;
+
+    sessionStorage.setItem("splashPlayed", "true");
+    setPhase("enter");
+
     const t1 = setTimeout(() => setPhase("visible"), 300);
     const t2 = setTimeout(() => setTextPhase(true), 900);
     const t3 = setTimeout(() => setPhase("exit"), 3800);
@@ -41,7 +47,7 @@ export default function IntroSplash() {
         transition: "opacity 0.8s ease",
       }}
     >
-      {/* LEFT text — travels from left:0 to beside logo */}
+      {/* LEFT text */}
       <div
         className="splash-text"
         style={{
@@ -88,7 +94,7 @@ export default function IntroSplash() {
         />
       </div>
 
-      {/* RIGHT text — travels from right:0 to beside logo */}
+      {/* RIGHT text */}
       <div
         className="splash-text"
         style={{
@@ -113,7 +119,7 @@ export default function IntroSplash() {
         </p>
       </div>
 
-      {/* BOTTOM text — travels from bottom:0 to below logo */}
+      {/* BOTTOM text */}
       <div
         className="splash-text"
         style={{
