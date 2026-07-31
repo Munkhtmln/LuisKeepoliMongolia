@@ -17,7 +17,7 @@ export default function ContactPage() {
         </p>
 
         <p className="mt-1 text-sm text-foreground/80 sm:text-base">
-          {t("contactPage.phoneLabel")}: {t("contactPage.phone")} |{" "}
+          {t("contactPage.phoneLabel")}: {t("contactPage.phone")} <br />
           {t("contactPage.emailLabel")}: {t("contactPage.email")}
         </p>
 
