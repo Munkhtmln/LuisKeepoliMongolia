@@ -15,6 +15,15 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    slug: "meeting",
+    image: "/meeting.jpg",
+    titleKey: "meeting.heroTitle",
+    descriptionKey: "meeting.description",
+    pageTitleKey: "userPage.certification1.pageTitle",
+    introKey: "userPage.certification1.intro",
+    sections: [],
+  },
+  {
     slug: "nariivchilsan",
     image: "/graduation.png",
     titleKey: "graduation.heroTitle",
