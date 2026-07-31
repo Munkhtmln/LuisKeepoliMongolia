@@ -80,13 +80,23 @@ export default async function ServiceDetailPage({
                 {t(section.headingKey)}
               </h2>
 
-              <div className="mt-4 space-y-4">
+              <div className="mt-4 space-y-4 ">
                 {section.paragraphKeys.map((key, pIndex) => (
                   <p
                     key={pIndex}
-                    className=" text-base leading-relaxed text-foreground"
+                    className=" whitespace-pre-wrap text-base leading-relaxed text-foreground"
                   >
-                    {t(key)}
+                    <li>{t("services.items.laboratory.intro.0")}</li>
+                    <li>{t("services.items.laboratory.intro.1")}</li>
+                    <li>{t("services.items.laboratory.intro.2")}</li>
+                    <li>{t("services.items.laboratory.intro.0")}</li>
+                    <li>{t("services.items.laboratory.intro.3")}</li>
+                    <li>{t("services.items.laboratory.intro.4")}</li>
+                    <li>{t("services.items.laboratory.intro.0")}</li>
+                    <li>{t("services.items.laboratory.intro.5")}</li>
+                    <li>{t("services.items.laboratory.intro.6")}</li>
+                    <li>{t("services.items.laboratory.intro.0")}</li>
+                    <li>{t("services.items.laboratory.intro.7")}</li>
                   </p>
                 ))}
               </div>
