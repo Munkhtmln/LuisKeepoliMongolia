@@ -84,7 +84,7 @@ export default async function ServiceDetailPage({
                 {section.paragraphKeys.map((key, pIndex) => (
                   <p
                     key={pIndex}
-                    className="text-base leading-relaxed text-foreground"
+                    className=" text-base leading-relaxed text-foreground"
                   >
                     {t(key)}
                   </p>
