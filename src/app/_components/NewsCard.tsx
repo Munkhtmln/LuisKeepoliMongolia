@@ -33,7 +33,7 @@ export function NewsCard({ image, title, description }: NewsCardProps) {
           src={image}
           alt={title}
           fill
-          className="object-cover"
+          className=""
           sizes="(max-width: 768px) 100vw, 42vw"
         />
       </div>

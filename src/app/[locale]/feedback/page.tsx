@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import { useLocale } from "@/i18n/LocaleProvider";
 
@@ -237,19 +237,27 @@ export default function FeedbackPage() {
             </div>
           </section> */}
 
-          <section className="flex items-center justify-center">
-            <div className="text-center">
-              <h2 className="text-xl font-semibold">
-                {t("feedbackPage.contact.title")}
-              </h2>
-
-              <a
-                href="mailto:example@gmail.com"
-                className="mt-2 block text-primary underline hover:text-primary/80"
-              >
-                {t("feedbackPage.contact.email")}
-              </a>
+          <section className="flex flex-col items-center text-center">
+            <div className="relative mb-6 h-110 w-full max-w-7xl">
+              <Image
+                src="/gomdol.jpeg"
+                alt="Contact"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
+
+            <h2 className="text-xl font-semibold">
+              {t("feedbackPage.contact.title")}
+            </h2>
+
+            <a
+              href="mailto:example@gmail.com"
+              className="mt-2 text-primary underline hover:text-primary/80"
+            >
+              {t("feedbackPage.contact.email")}
+            </a>
           </section>
         </div>
       </div>

@@ -23,6 +23,7 @@ const navKeys = [
   { key: "nav.user", path: "/user" },
   { key: "nav.services", path: "/services" },
   { key: "nav.feedback", path: "/feedback" },
+  { key: "nav.rules", path: "/rules" },
   { key: "nav.contact", path: "/contact" },
 ] as const;
 
@@ -55,7 +56,7 @@ export default function Header() {
         backgroundColor: `rgba(255, 255, 255, ${0.6 + opacity * 0.4})`,
       }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl ml-16 px-4 sm:px-6 lg:px-8">
         <div
           className={cn(
             "flex h-16 min-w-0 items-center gap-4 lg:h-20",
@@ -63,7 +64,7 @@ export default function Header() {
           )}
         >
           {/* Logo - overflowing (visible overflow, no shrink) */}
-          <div className="relative flex shrink-0 overflow-visible">
+          <div className="relative flex  shrink-0 overflow-visible">
             <Link
               href={`/${locale}`}
               className="flex items-center overflow-visible"

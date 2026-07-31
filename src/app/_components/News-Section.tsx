@@ -12,7 +12,12 @@ export default function NewsSection({ showTitle = true }: NewsSectionProps) {
   const { t } = useLocale();
   return (
     <section className="w-full bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="mt-7 mx-auto  bg-white  items-center justify-center max-w-[1210px]">
+        <h1 className="text-4xl m-auto font-bold tracking-tight flex items-start justify-start text-foreground sm:text-5xl">
+          Мэдээ Мэдээлэл
+        </h1>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-10">
         {showTitle && (
           <div className="mb-10 md:mb-12">
             <h2 className="text-2xl font-bold text-foreground leading-tight">

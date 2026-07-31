@@ -5,6 +5,7 @@
     "user": "用户栏目",
     "services": "服务",
     "feedback": "投诉与建议",
+    "rules": "法律法规",
     "contact": "联系我们"
   },
   "sidebar": {
@@ -95,6 +96,14 @@
     "hero": {
       "title": "“资质证明及高级管理层声明”"
     },
+    "certification1": {
+      "title": "颁发证书",
+      "description": "内蒙古环境研究与分析中心于2026年4月17日组织的“化学品安全与风险管理培训”中，2名员工成功参加并获得证书。"
+    },
+    "certification2": {
+      "title": "获得内部审计师认证",
+      "description": "内蒙古标准化研究院于2026年5月26日至27日组织的“MNS ISO 19011:2020 - 管理体系审核指南”培训中，成功获得内部审核员证书。"
+    },
     "coalIntro": {
       "title": "关于煤炭检测的简要信息",
       "description": "我们通过综合性的煤炭检测服务，为您提供作出符合质量、绩效、效率和监管要求决策所需的关键信息。",
@@ -102,46 +111,35 @@
     },
     "accreditation": {
       "title": "认可范围"
-    },
-    "table": {
-      "headers": {
-        "testType1": "开展的",
-        "testType2": "检测类型",
-        "product1": "检测产品、",
-        "product2": "材料及对象名称",
-        "indicator": "检测指标",
-        "method1": "检测方法、",
-        "method2": "方法标准"
-      },
-      "rows": {
-        "samplePreparation": {
-          "type1": "采样",
-          "type2": "样品制备",
-          "sample": "采样",
-          "preparation": "样品制备"
-        },
-        "commonMaterial": {
-          "line1": "固体燃料：烟煤和褐煤",
-          "line2": ""
-        },
-        "technicalAnalysis": {
-          "title": "工业分析",
-          "totalMoisture": "全水分",
-          "proximate": "工业分析",
-          "calorificValue": "发热量",
-          "cakingProperty": "粘结性"
-        },
-        "chemicalAnalysis": {
-          "title": "化学分析",
-          "totalSulfur": "全硫",
-          "sulfurPhosphorusArsenicChloride1": "硫、磷、砷、",
-          "sulfurPhosphorusArsenicChloride2": "氯化物",
-          "mercury": "汞",
-          "fluorine": "氟含量",
-          "hydrogenCarbonNitrogen1": "氢、碳、",
-          "hydrogenCarbonNitrogen2": "氮含量"
-        }
-      }
+    }
+  },
+  "grad": {
+    "heroTitle": "认可范围扩展",
+    "description": "根据蒙古国家认证中心主任于2026年6月10日发布的A/158号命令，实验室的认可范围已扩展。",
+    "pageTitle": "\"Луис кееполи Монголиа \" ХХК баримталдаг хууль тогтоомж.",
+    "notFound": {
+      "title": "Үйлчилгээ олдсонгүй",
+      "description": "Хайлтын үр дүнд тохирох үйлчилгээ олдсонгүй. Та жагсаалтаас дахин сонгон үзнэ үү."
+    }
+  },
+  "graduation": {
+    "heroTitle": "认可范围扩展",
+    "description": "根据蒙古国家认证中心主任于2026年6月10日发布的A/158号命令，实验室的认可范围已扩展。",
+    "pageTitle": "\"Луис кееполи Монголиа \" ХХК баримталдаг хууль тогтоомж.",
+    "notFound": {
+      "title": "Үйлчилгээ олдсонгүй",
+      "description": "Хайлтын үр дүнд тохирох үйлчилгээ олдсонгүй. Та жагсаалтаас дахин сонгон үзнэ үү."
+    }
+  },
+  "rules": {
+    "heroTitle": "我们的法律",
+    "heroDescription1": "矿产法",
+    "heroDescription2": "劳动法",
+    "heroDescription3": "标准和技术法规合格评定认可法",
+    "pageTitle": "\"Luis Keepoli Mongolia\" 有限责任公司遵守的法律法规。",
+    "notFound": {
+      "title": "未找到服务",
+      "description": "未找到与搜索结果匹配的服务。请从列表中重新选择。"
     }
   },
   "services": {
