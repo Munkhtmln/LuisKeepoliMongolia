@@ -243,7 +243,7 @@
     "mapAria": "Байршлын газрын зураг"
   },
   "footer": {
-    "company": "\"Louis Keepoli Mongolia\" ХХК",
+    "company": "\"Louis Keepole Mongolia\" ХХК",
     "addressLine1": "Монгол улс, Улаанбаатар хот, Хан-Уул дүүрэг 22-р",
     "addressLine2": "хороо, Зайсангийн ам.",
     "phoneLabel": "Утас",
@@ -251,5 +251,8 @@
     "email": "louiskeepolemongolia@gmail.com",
     "scrollTop": "Дээш очих",
     "copyright": "Copyright ©2026 \"Louis Keepoli Mongolia\" ХХК, Бүх эрх хуулиар хамгаалагдсан."
+  },
+  "mmedeelel": {
+    "title": "Мэдээ, Мэдээлэл"
   }
 }
