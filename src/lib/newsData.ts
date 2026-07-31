@@ -35,7 +35,7 @@ export const newsItems: NewsItem[] = [
 
   {
     slug: "Gerchilgee-gardan-awah",
-    image: "/gerchilgee-gardah2.jpeg",
+    image: "/SHTSG.jpeg",
     titleKey: "userPage.certification2.title",
     descriptionKey: "userPage.certification2.description",
     pageTitleKey: "userPage.certification2.pageTitle",
