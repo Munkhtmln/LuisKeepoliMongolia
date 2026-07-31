@@ -251,7 +251,7 @@ export default function FeedbackPage() {
             <h2 className="text-xl font-semibold">
               {t("feedbackPage.contact.title")}
             </h2>
-
+            <p>Утас:7708-0707</p>
             <a
               href="mailto:example@gmail.com"
               className="mt-2 text-primary underline hover:text-primary/80"
