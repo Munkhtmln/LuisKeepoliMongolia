@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luis Keepoli Mongolia LLC",
+  title: "Louis Keepole Mongolia LLC",
   description: "",
 };
 

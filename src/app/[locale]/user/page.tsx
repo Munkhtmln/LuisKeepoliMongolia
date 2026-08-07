@@ -31,7 +31,7 @@ export default function NewsPage() {
           </div>
 
           <div className="relative aspect-[3/3] h-[300px] overflow-hidden rounded-lg">
-            <Image src="/gerchilgee1.jpg" alt="photo2" fill className="" />
+            <Image src="/itgemjleliin.png" alt="photo2" fill className="" />
           </div>
         </div>
         {/* dood 3  */}

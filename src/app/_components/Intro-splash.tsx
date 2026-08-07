@@ -68,7 +68,7 @@ export default function IntroSplash() {
             letterSpacing: "0.04em",
           }}
         >
-          LuisKeepoliMongolia
+          LouisKeepoleMongolia
         </p>
       </div>
 

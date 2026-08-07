@@ -7,7 +7,7 @@ import { isLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Luis Keepoli Mongolia LLC",
+  title: "Louis Keepole Mongolia LLC",
   description: "",
 };
 
